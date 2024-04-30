@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level8Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e9af6b32c4c3e4004bcb187b85d5f45f, type: 3}
+    - {fileID: 2800000, guid: 9935ca612c6df4e88b0f2c47c00e1fd5, type: 3}
+    - {fileID: 2800000, guid: 5015c25b5d244466fa4c6176669dd7d3, type: 3}
+    - {fileID: 2800000, guid: ec96dadfca43948f186898e8a6edd090, type: 3}
+    - {fileID: 2800000, guid: 8aeb3399e4d2e4033a141fad973c4e3d, type: 3}
+    - {fileID: 2800000, guid: 7bdd8556f7ce44756992e5da6e5daac0, type: 3}
+    - {fileID: 2800000, guid: a8b23e0cc1c5149c7a89787f9488723e, type: 3}
+    - {fileID: 2800000, guid: e12083e3d9bce4bc09cef3f889f2541a, type: 3}
+    - {fileID: 2800000, guid: 3ccf4a27a93ff48e58245378f177eab5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9935ca612c6df4e88b0f2c47c00e1fd5, type: 3}
+  - {fileID: 21300000, guid: e9af6b32c4c3e4004bcb187b85d5f45f, type: 3}
+  - {fileID: 21300000, guid: e12083e3d9bce4bc09cef3f889f2541a, type: 3}
+  - {fileID: 21300000, guid: 7bdd8556f7ce44756992e5da6e5daac0, type: 3}
+  - {fileID: 21300000, guid: 3ccf4a27a93ff48e58245378f177eab5, type: 3}
+  - {fileID: 21300000, guid: 8aeb3399e4d2e4033a141fad973c4e3d, type: 3}
+  - {fileID: 21300000, guid: 5015c25b5d244466fa4c6176669dd7d3, type: 3}
+  - {fileID: 21300000, guid: a8b23e0cc1c5149c7a89787f9488723e, type: 3}
+  - {fileID: 21300000, guid: ec96dadfca43948f186898e8a6edd090, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Puzzel - 2
+  - Puzzel - 1
+  - Puzzel - 8
+  - Puzzel - 6
+  - Puzzel - 9
+  - Puzzel - 5
+  - Puzzel - 3
+  - Puzzel - 7
+  - Puzzel - 4
+  m_RenderDataMap: {}
+  m_Tag: Level8Atlas
+  m_IsVariant: 0
