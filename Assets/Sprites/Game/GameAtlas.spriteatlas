@@ -65,13 +65,11 @@ SpriteAtlas:
     - {fileID: 2800000, guid: a8294a17e5d57405482d297f8c16426d, type: 3}
     - {fileID: 2800000, guid: e675067f189c34bf6a15b2c4ecfb8a04, type: 3}
     - {fileID: 2800000, guid: 4a9e11ea337c948a78de9dd17403ea78, type: 3}
-    - {fileID: 2800000, guid: 467e42d979eaa45f6b1183a339eb69cf, type: 3}
-    - {fileID: 2800000, guid: f2c46fa02a48042cf83ed8e7afc5c016, type: 3}
+    - {fileID: 2800000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
+    - {fileID: 2800000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
     - {fileID: 2800000, guid: 7d9446d6ad3ff4fb28f40e0a532c9e8a, type: 3}
     - {fileID: 2800000, guid: c3966e2fc052f4b29a047a2beccc7a81, type: 3}
     - {fileID: 2800000, guid: 306e23e732224471fb553e706cd49358, type: 3}
-    - {fileID: 2800000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
-    - {fileID: 2800000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -79,7 +77,6 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: ef256740d389c43419db8b8e51d1da55, type: 3}
   - {fileID: 21300000, guid: 1f45039094051447db8b1e05bfdd7d07, type: 3}
-  - {fileID: 21300000, guid: f2c46fa02a48042cf83ed8e7afc5c016, type: 3}
   - {fileID: 21300000, guid: 950f19d0c6bd14950bef77ed94e2814e, type: 3}
   - {fileID: 21300000, guid: 7c52ab1313603447e8f6b0ed25d4e7e1, type: 3}
   - {fileID: 21300000, guid: 4972a5f35880442259a2e90f07cb6323, type: 3}
@@ -95,7 +92,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 306e23e732224471fb553e706cd49358, type: 3}
   - {fileID: 21300000, guid: 727fed28801f444d79f4dcb3bcc4685f, type: 3}
   - {fileID: 21300000, guid: 95fc10791aac844ed94678c1282dd127, type: 3}
-  - {fileID: 21300000, guid: 467e42d979eaa45f6b1183a339eb69cf, type: 3}
   - {fileID: 21300000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
   - {fileID: 21300000, guid: 4a9e11ea337c948a78de9dd17403ea78, type: 3}
   - {fileID: 21300000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
@@ -108,7 +104,6 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - icon
   - Button Yes - Enabled
-  - Puzzel default
   - Button No - Enabled
   - Button Again - Pressed
   - Button Restart - Enabled
@@ -124,7 +119,6 @@ SpriteAtlas:
   - serpantin 3
   - Button Yes - Enabled-1
   - Button Restart - Pressed
-  - Puzzel default 4x4
   - Vector
   - Paused
   - x
@@ -135,5 +129,5 @@ SpriteAtlas:
   - serpantin 2
   - Panel
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: GameAtlas
   m_IsVariant: 0

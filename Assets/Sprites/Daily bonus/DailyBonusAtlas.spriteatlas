@@ -87,5 +87,5 @@ SpriteAtlas:
   - Button Menu - Pressed
   - Button Spin - Pressed
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: DailyBonusAtlas
   m_IsVariant: 0
