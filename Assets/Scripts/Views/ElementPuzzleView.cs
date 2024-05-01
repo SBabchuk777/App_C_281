@@ -57,6 +57,7 @@ namespace Views
             Vector3 mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
 
             _mousePositionOffest = mousePositionWorldPoint - transform.position;
+            transform.SetAsLastSibling();
         }
 
         public void OnDrag(PointerEventData eventData)
