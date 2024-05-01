@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Managers;
 using Screens;
-using Datas;
 
 namespace Views
 {
@@ -21,6 +20,8 @@ namespace Views
         private GridLayoutGroup _gridLayoutGroup;
 
         private int _elementIndex;
+
+        private bool isDrag = true;
 
         public void SetupElement(Sprite sprite, int index,Vector2 vector2)
         {
@@ -54,35 +55,46 @@ namespace Views
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _startPos = transform.position;
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
-            Vector3 mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
+            if (isDrag)
+            {
+                _startPos = transform.position;
+                Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
+                Vector3 mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            _mousePositionOffest = mousePositionWorldPoint - transform.position;
-            transform.SetAsLastSibling();
+                _mousePositionOffest = mousePositionWorldPoint - transform.position;
+                transform.SetAsLastSibling();
+            }
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
-            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - _mousePositionOffest;
+            if (isDrag)
+            {
+                Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
+                Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - _mousePositionOffest;
 
-            transform.position = objPosition;
+                transform.position = objPosition;
+            }
         }
         public void OnEndDrag(PointerEventData eventData)
         {
-            Vector3 currentPosition = transform.position;
-            Vector3 nearestCellPosition = FindNearestCellPosition(currentPosition);
-
-            float distance = Vector2.Distance(transform.position, nearestCellPosition);
-
-            if (distance > 0.6)
+            if (isDrag)
             {
-                transform.position = _startPos;
-            }
-            else
-            {
-                transform.position = nearestCellPosition;
+                Vector3 currentPosition = transform.position;
+                Vector3 nearestCellPosition = FindNearestCellPosition(currentPosition);
+
+                float distance = Vector2.Distance(transform.position, nearestCellPosition);
+
+                if (distance > 0.6)
+                {
+                    isDrag = true;
+                    transform.position = _startPos;
+                }
+                else
+                {
+                    isDrag = false;
+                    transform.position = nearestCellPosition;
+                }
             }
         }
 
