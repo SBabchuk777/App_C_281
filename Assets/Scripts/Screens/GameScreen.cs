@@ -37,6 +37,7 @@ namespace Screens
         private List<WrongView> _wrongViews = new List<WrongView>();
 
         private int _countWrongs = 4;
+        private int _wrongSpendCount;
 
         private void Start()
         {
@@ -59,6 +60,53 @@ namespace Screens
             SetupGridViews(currentLevel);
             SetupElemets(currentLevel);
             SetupAvailableWrongs();
+        }
+
+        public void SpendAttemp()
+        {
+            if(_wrongSpendCount == 0)
+            {
+                Debug.LogError("You Lose");
+                return;
+            }
+
+            //Debug.LogError("Count wrongs: " + _wrongSpendCount);
+
+            _wrongViews[_wrongSpendCount-1].SetWrong(true);
+            _wrongSpendCount--;
+        }
+
+        public GridView GetGridView(Vector3 position)
+        {
+            if (_gridViews.Count == 0)
+                return null;
+
+            GridView nearestCell = null;
+            float minDistance = Mathf.Infinity;
+
+            foreach (GridView cell in _gridViews)
+            {
+                float distance = Vector3.Distance(position, cell.transform.position);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestCell = cell;
+                }
+            }
+
+            return nearestCell;
+        }
+
+        public void SetGrid(bool active)
+        {
+            grid3x3.gameObject.SetActive(active);
+            grid4x4.gameObject.SetActive(!active);
+
+            _gridLayout = active ? grid3x3.gameObject.activeSelf
+                ? grid3x3 : grid4x4 : grid4x4.gameObject.activeSelf
+                ? grid4x4 : grid3x3;
+
         }
 
         #region SetupViews
@@ -94,45 +142,14 @@ namespace Screens
         {
             for (int i = 0; i < _countWrongs; i++)
             {
-                var newWrongView = Instantiate(wrongView,wrongsParents);
+                var newWrongView = Instantiate(wrongView, wrongsParents);
                 _wrongViews.Add(newWrongView);
             }
+
+            _wrongSpendCount = _wrongViews.Count;
         }
 
-        #endregion 
-
-        public GridView GetGridView(Vector3 position)
-        {
-            if (_gridViews.Count == 0)
-                return null;
-
-            GridView nearestCell = null;
-            float minDistance = Mathf.Infinity;
-
-            foreach (GridView cell in _gridViews)
-            {
-                float distance = Vector3.Distance(position, cell.transform.position);
-
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    nearestCell = cell;
-                }
-            }
-
-            return nearestCell;
-        }
-
-        public void SetGrid(bool active)
-        {
-            grid3x3.gameObject.SetActive(active);
-            grid4x4.gameObject.SetActive(!active);
-
-            _gridLayout = active ? grid3x3.gameObject.activeSelf
-                ? grid3x3 : grid4x4 : grid4x4.gameObject.activeSelf
-                ? grid4x4 : grid3x3;
-
-        }
+        #endregion
 
         #region Clearing Lists
 

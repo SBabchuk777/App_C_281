@@ -104,6 +104,13 @@ namespace Views
 
                         isDrag = true;
                         transform.position = _startPos;
+
+                        var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
+
+                        if(gameScreen != null)
+                        {
+                            gameScreen.SpendAttemp();
+                        }
                     }
                    
                 }
