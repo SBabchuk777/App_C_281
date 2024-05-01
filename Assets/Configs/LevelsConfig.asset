@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff2c8fd59c8b41f9bbcbeb310fc6101, type: 3}
+  m_Name: LevelsConfig
+  m_EditorClassIdentifier: 
+  Levels:
+  - CountElements: 9
+    ElementsPuzzles:
+    - ElementSprite: {fileID: 21300000, guid: 9105155127dfc47aab049e565a99990c, type: 3}
+      ElementIndex: 1
+    - ElementSprite: {fileID: 21300000, guid: e50056a4e38b6410e9cc4fc3b060f207, type: 3}
+      ElementIndex: 2
+    - ElementSprite: {fileID: 21300000, guid: 4b892b27a210c40a491d98ddd67e6977, type: 3}
+      ElementIndex: 3
+    - ElementSprite: {fileID: 21300000, guid: 775f0267fb9144df2bc09d12694e40d3, type: 3}
+      ElementIndex: 4
+    - ElementSprite: {fileID: 21300000, guid: 1be5d8ae6a3d44446998caa7a7d5ce91, type: 3}
+      ElementIndex: 5
+    - ElementSprite: {fileID: 21300000, guid: 00546dc9ebb4442d78f47e0524d8b41e, type: 3}
+      ElementIndex: 6
+    - ElementSprite: {fileID: 21300000, guid: 02bfbeebad2294362aad114c4d4c6ad8, type: 3}
+      ElementIndex: 7
+    - ElementSprite: {fileID: 21300000, guid: 7374cadddfb61416a9f5366b1162a52c, type: 3}
+      ElementIndex: 8
+    - ElementSprite: {fileID: 21300000, guid: 0cdc2f9d2c8e8425f8342ce6a5fc9a83, type: 3}
+      ElementIndex: 9

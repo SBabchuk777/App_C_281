@@ -5,18 +5,28 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Managers;
 using Screens;
+using Datas;
 
 namespace Views
 {
     public class ElementPuzzleView : MonoBehaviour, IBeginDragHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler,IEndDragHandler
     {
         [SerializeField] private RectTransform rectElement;
+        [SerializeField] private Image elementImage;
 
-        private Vector3 mousePositionOffest;
-        private Vector3 startPos;
+        private Vector3 _mousePositionOffest;
+        private Vector3 _startPos;
 
-        private Vector2 gridSize;
-        private GridLayoutGroup gridLayoutGroup;
+        private Vector2 _gridSize;
+        private GridLayoutGroup _gridLayoutGroup;
+
+        private int _elementIndex;
+
+        public void SetupElement(Sprite sprite, int index)
+        {
+            elementImage.sprite = sprite;
+            _elementIndex = index;
+        }
 
         private void OnEnable()
         {
@@ -24,10 +34,10 @@ namespace Views
 
             if (gameScreen != null)
             {
-                gridLayoutGroup = gameScreen.gridLayout;
-                gridSize = gridLayoutGroup.cellSize;
+                _gridLayoutGroup = gameScreen.GridLayout;
+                _gridSize = _gridLayoutGroup.cellSize;
 
-                rectElement.sizeDelta = gridSize; //- new Vector2(2.5f,2.5f);
+                rectElement.sizeDelta = _gridSize; //- new Vector2(2.5f,2.5f);
             }
         }
 
@@ -42,17 +52,17 @@ namespace Views
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            startPos = transform.position;
+            _startPos = transform.position;
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
             Vector3 mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            mousePositionOffest = mousePositionWorldPoint - transform.position;
+            _mousePositionOffest = mousePositionWorldPoint - transform.position;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
-            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - mousePositionOffest;
+            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - _mousePositionOffest;
 
             transform.position = objPosition;
         }
@@ -65,7 +75,7 @@ namespace Views
 
             if (distance > 0.6)
             {
-                transform.position = startPos;
+                transform.position = _startPos;
             }
             else
             {
@@ -75,7 +85,7 @@ namespace Views
 
         private Vector3 FindNearestCellPosition(Vector3 position)
         {
-            RectTransform[] cells = gridLayoutGroup.GetComponentsInChildren<RectTransform>();
+            RectTransform[] cells = _gridLayoutGroup.GetComponentsInChildren<RectTransform>();
 
             RectTransform nearestCell = null;
             float minDistance = Mathf.Infinity;
