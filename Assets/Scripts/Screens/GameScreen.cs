@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Datas;
 using Views;
+using UnityEngine.UIElements;
 
 namespace Screens
 {
@@ -37,7 +38,7 @@ namespace Screens
 
         public void SetupLevel()
         {
-            var currentLevel = levelsConfig.Levels[3];
+            var currentLevel = levelsConfig.Levels[0];
            
             if (currentLevel.CountElements <= 9)
             {
@@ -77,6 +78,28 @@ namespace Screens
                 elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex, randomPosition);
                 _elementPuzzleViews.Add(elementView);
             }
+        }
+
+        public GridView GetGridView(Vector3 position)
+        {
+            if (_gridViews.Count == 0)
+                return null;
+
+            GridView nearestCell = null;
+            float minDistance = Mathf.Infinity;
+
+            foreach (GridView cell in _gridViews)
+            {
+                float distance = Vector3.Distance(position, cell.transform.position);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestCell = cell;
+                }
+            }
+
+            return nearestCell;
         }
 
         public void ClearElements()

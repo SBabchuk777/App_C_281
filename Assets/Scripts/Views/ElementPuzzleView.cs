@@ -116,24 +116,7 @@ namespace Views
 
             if (gameScreen != null)
             {
-                if (gameScreen.GridViews.Count == 0)
-                    return null;
-
-                GridView nearestCell = null;
-                float minDistance = Mathf.Infinity;
-
-                foreach (GridView cell in gameScreen.GridViews)
-                {
-                    float distance = Vector3.Distance(position, cell.transform.position);
-
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        nearestCell = cell;
-                    }
-                }
-
-                return nearestCell;
+                return gameScreen.GetGridView(position);
             }
 
             return null;
