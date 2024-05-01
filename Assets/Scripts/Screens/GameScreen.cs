@@ -47,18 +47,32 @@ namespace Screens
 
             for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
             {
-                var elementView = Instantiate(puzzleView, elementParents);
+                var elementView = Instantiate(puzzleView, _gridLayout.transform);
                 elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex);
 
-                float randomX = UnityEngine.Random.Range(parentMin.x, parentMax.x);
-                float randomY = UnityEngine.Random.Range(parentMin.y, parentMax.y);
-
-                // Устанавливаем позицию элемента пазла
-                RectTransform elementRect = elementView.GetComponent<RectTransform>();
-                elementRect.anchoredPosition = new Vector2(randomX, randomY);
+                //float randomX = UnityEngine.Random.Range(parentMin.x, parentMax.x);
+                //float randomY = UnityEngine.Random.Range(parentMin.y, parentMax.y);
+                
+                //RectTransform elementRect = elementView.GetComponent<RectTransform>();
+                //elementRect.anchoredPosition = new Vector2(randomX, randomY);
 
                 _elementPuzzleViews.Add(elementView);
             }
+
+
+            //for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
+            //{
+            //    var elementView = Instantiate(puzzleView, elementParents);
+            //    elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex);
+
+            //    float randomX = UnityEngine.Random.Range(parentMin.x, parentMax.x);
+            //    float randomY = UnityEngine.Random.Range(parentMin.y, parentMax.y);
+
+            //    RectTransform elementRect = elementView.GetComponent<RectTransform>();
+            //    elementRect.anchoredPosition = new Vector2(randomX, randomY);
+
+            //    _elementPuzzleViews.Add(elementView);
+            //}
         }
 
         public void ClearElements()
