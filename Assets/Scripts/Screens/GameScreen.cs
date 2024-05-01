@@ -17,19 +17,26 @@ namespace Screens
         [Header("GridLayout")]
         [SerializeField] private GridLayoutGroup grid3x3;
         [SerializeField] private GridLayoutGroup grid4x4;
-        [SerializeField] private RectTransform elementParents;
 
-        [Header("Config")]
+        [Header("Parents")]
+        [SerializeField] private RectTransform elementParents;
+        [SerializeField] private RectTransform wrongsParents;
+
+        [Header("Configs")]
         [SerializeField] private LevelsConfig levelsConfig;
 
-        [Header("Prefab")]
+        [Header("Prefabs")]
         [SerializeField] private ElementPuzzleView puzzleView;
         [SerializeField] private GridView gridView;
+        [SerializeField] private WrongView wrongView;
 
         private GridLayoutGroup _gridLayout;
 
         private List<ElementPuzzleView> _elementPuzzleViews = new List<ElementPuzzleView>();
         private List<GridView> _gridViews = new List<GridView>();
+        private List<WrongView> _wrongViews = new List<WrongView>();
+
+        private int _countWrongs = 4;
 
         private void Start()
         {
@@ -51,7 +58,10 @@ namespace Screens
 
             SetupGridViews(currentLevel);
             SetupElemets(currentLevel);
+            SetupAvailableWrongs();
         }
+
+        #region SetupViews
 
         public void SetupGridViews(LevelsConfig.Level currentLevel)
         {
@@ -80,6 +90,17 @@ namespace Screens
             }
         }
 
+        public void SetupAvailableWrongs()
+        {
+            for (int i = 0; i < _countWrongs; i++)
+            {
+                var newWrongView = Instantiate(wrongView,wrongsParents);
+                _wrongViews.Add(newWrongView);
+            }
+        }
+
+        #endregion 
+
         public GridView GetGridView(Vector3 position)
         {
             if (_gridViews.Count == 0)
@@ -102,6 +123,19 @@ namespace Screens
             return nearestCell;
         }
 
+        public void SetGrid(bool active)
+        {
+            grid3x3.gameObject.SetActive(active);
+            grid4x4.gameObject.SetActive(!active);
+
+            _gridLayout = active ? grid3x3.gameObject.activeSelf
+                ? grid3x3 : grid4x4 : grid4x4.gameObject.activeSelf
+                ? grid4x4 : grid3x3;
+
+        }
+
+        #region Clearing Lists
+
         public void ClearElements()
         {
             for (int i = 0; i < _elementPuzzleViews.Count; i++)
@@ -122,15 +156,16 @@ namespace Screens
             _gridViews.Clear();
         }
 
-        public void SetGrid(bool active)
+        public void ClearWrongsViews()
         {
-            grid3x3.gameObject.SetActive(active);
-            grid4x4.gameObject.SetActive(!active);
+            for (int i = 0; i < _wrongViews.Count; i++)
+            {
+                Destroy(_wrongViews[i].gameObject);
+            }
 
-            _gridLayout = active ? grid3x3.gameObject.activeSelf
-                ? grid3x3 : grid4x4 : grid4x4.gameObject.activeSelf
-                ? grid4x4 : grid3x3;
-
+            _wrongViews.Clear();
         }
+
+        #endregion
     }
 }
