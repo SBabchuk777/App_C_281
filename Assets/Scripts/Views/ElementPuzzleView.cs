@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using Managers;
+using Screens;
 
 namespace Views
 {
@@ -10,6 +13,19 @@ namespace Views
         private Vector3 mousePositionOffest;
         private Vector3 startPos;
 
+        private Vector2 gridSize;
+        private GridLayoutGroup gridLayoutGroup;
+
+        private void OnEnable()
+        {
+            var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
+
+            if (gameScreen != null)
+            {
+                gridLayoutGroup = gameScreen.gridLayout;
+                gridSize = gridLayoutGroup.cellSize;
+            }
+        }
 
         public void OnPointerUp(PointerEventData eventData)
         {
@@ -35,16 +51,43 @@ namespace Views
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - mousePositionOffest;
 
             transform.position = objPosition;
-            Debug.LogError("Drag");
-
         }
         public void OnEndDrag(PointerEventData eventData)
         {
-            float x = Mathf.Round(transform.position.x);
-            float y = Mathf.Round(transform.position.y);
-            Vector3 pos = new Vector3(x, y, 0);
-            transform.position = pos;
-            Debug.LogError("End Drag");
+            Vector3 currentPosition = transform.position;
+            Vector3 nearestCellPosition = FindNearestCellPosition(currentPosition);
+
+            float distance = Vector2.Distance(transform.position, nearestCellPosition);
+
+            if (distance > 0.6)
+            {
+                transform.position = startPos;
+            }
+            else
+            {
+                transform.position = nearestCellPosition;
+            }
+        }
+
+        private Vector3 FindNearestCellPosition(Vector3 position)
+        {
+            RectTransform[] cells = gridLayoutGroup.GetComponentsInChildren<RectTransform>();
+
+            RectTransform nearestCell = null;
+            float minDistance = Mathf.Infinity;
+
+            foreach (RectTransform cell in cells)
+            {
+                float distance = Vector3.Distance(position, cell.position);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestCell = cell;
+                }
+            }
+
+            return nearestCell.position;
         }
     }
 }

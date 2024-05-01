@@ -22,7 +22,7 @@ namespace Managers
 
         private void Start()
         {
-            //OpenScreen<StartScreen>();
+            OpenScreen<GameScreen>();
 
             IsSetup = true;
         }
