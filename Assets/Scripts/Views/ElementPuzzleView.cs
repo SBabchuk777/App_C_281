@@ -80,6 +80,7 @@ namespace Views
         {
             if (isDrag)
             {
+                var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
                 Vector3 currentPosition = transform.position;
 
                 GridView nearestCell = FindNearestCellPosition(currentPosition);
@@ -97,15 +98,16 @@ namespace Views
                     {
                         transform.position = nearestCell.transform.position;
                         isDrag = false;
+
+                        if (gameScreen != null)
+                        {
+                            gameScreen.AddElementForGrid(this);
+                        }
                     }
                     else
                     {
-                        // TODO: для ресета позиции и траты ошибки...
-
                         isDrag = true;
                         transform.position = _startPos;
-
-                        var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
                         if(gameScreen != null)
                         {

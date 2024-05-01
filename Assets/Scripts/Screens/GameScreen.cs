@@ -33,6 +33,7 @@ namespace Screens
         private GridLayoutGroup _gridLayout;
 
         private List<ElementPuzzleView> _elementPuzzleViews = new List<ElementPuzzleView>();
+        private List<ElementPuzzleView> _elementPuzzleViewsGrids = new List<ElementPuzzleView>();
         private List<GridView> _gridViews = new List<GridView>();
         private List<WrongView> _wrongViews = new List<WrongView>();
 
@@ -46,7 +47,7 @@ namespace Screens
 
         public void SetupLevel()
         {
-            var currentLevel = levelsConfig.Levels[0];
+            var currentLevel = levelsConfig.Levels[3];
            
             if (currentLevel.CountElements <= 9)
             {
@@ -74,6 +75,17 @@ namespace Screens
 
             _wrongViews[_wrongSpendCount-1].SetWrong(true);
             _wrongSpendCount--;
+        }
+
+        public void AddElementForGrid(ElementPuzzleView elementPuzzleView)
+        {
+            _elementPuzzleViews.Remove(elementPuzzleView);
+            _elementPuzzleViewsGrids.Add(elementPuzzleView);
+
+            if(_elementPuzzleViews.Count == 0)
+            {
+                Debug.LogError("You Win");
+            }
         }
 
         public GridView GetGridView(Vector3 position)
@@ -161,6 +173,13 @@ namespace Screens
             }
 
             _elementPuzzleViews.Clear();
+
+            for (int i = 0; i < _elementPuzzleViewsGrids.Count; i++)
+            {
+                Destroy(_elementPuzzleViewsGrids[i].gameObject);
+            }
+
+            _elementPuzzleViewsGrids.Clear();
         }
 
         public void ClearGrids()
