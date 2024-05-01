@@ -81,9 +81,10 @@ namespace Views
             if (isDrag)
             {
                 Vector3 currentPosition = transform.position;
-                Vector3 nearestCellPosition = FindNearestCellPosition(currentPosition);
 
-                float distance = Vector2.Distance(transform.position, nearestCellPosition);
+                GridView nearestCell = FindNearestCellPosition(currentPosition);
+
+                float distance = Vector2.Distance(transform.position, nearestCell.transform.position);
 
                 if (distance > 0.6)
                 {
@@ -92,31 +93,50 @@ namespace Views
                 }
                 else
                 {
-                    isDrag = false;
-                    transform.position = nearestCellPosition;
+                    if(_elementIndex == nearestCell.ElementPuzzleIndex)
+                    {
+                        transform.position = nearestCell.transform.position;
+                        isDrag = false;
+                    }
+                    else
+                    {
+                        // TODO: для ресета позиции и траты ошибки...
+
+                        isDrag = true;
+                        transform.position = _startPos;
+                    }
+                   
                 }
             }
         }
 
-        private Vector3 FindNearestCellPosition(Vector3 position)
+        private GridView FindNearestCellPosition(Vector3 position)
         {
-            RectTransform[] cells = _gridLayoutGroup.GetComponentsInChildren<RectTransform>();
+            var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
-            RectTransform nearestCell = null;
-            float minDistance = Mathf.Infinity;
-
-            foreach (RectTransform cell in cells)
+            if (gameScreen != null)
             {
-                float distance = Vector3.Distance(position, cell.position);
+                if (gameScreen.GridViews.Count == 0)
+                    return null;
 
-                if (distance < minDistance)
+                GridView nearestCell = null;
+                float minDistance = Mathf.Infinity;
+
+                foreach (GridView cell in gameScreen.GridViews)
                 {
-                    minDistance = distance;
-                    nearestCell = cell;
+                    float distance = Vector3.Distance(position, cell.transform.position);
+
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        nearestCell = cell;
+                    }
                 }
+
+                return nearestCell;
             }
 
-            return nearestCell.position;
+            return null;
         }
     }
 }

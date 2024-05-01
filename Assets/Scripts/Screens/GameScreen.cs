@@ -11,6 +11,8 @@ namespace Screens
     {
         public GridLayoutGroup GridLayout => _gridLayout;
 
+        public List<GridView> GridViews => _gridViews;
+
         [Header("GridLayout")]
         [SerializeField] private GridLayoutGroup grid3x3;
         [SerializeField] private GridLayoutGroup grid4x4;
