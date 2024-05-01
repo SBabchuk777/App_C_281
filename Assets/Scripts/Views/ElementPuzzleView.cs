@@ -10,6 +10,8 @@ namespace Views
 {
     public class ElementPuzzleView : MonoBehaviour, IBeginDragHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler,IEndDragHandler
     {
+        [SerializeField] private RectTransform rectElement;
+
         private Vector3 mousePositionOffest;
         private Vector3 startPos;
 
@@ -24,6 +26,8 @@ namespace Views
             {
                 gridLayoutGroup = gameScreen.gridLayout;
                 gridSize = gridLayoutGroup.cellSize;
+
+                rectElement.sizeDelta = gridSize; //- new Vector2(2.5f,2.5f);
             }
         }
 
