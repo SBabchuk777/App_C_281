@@ -22,10 +22,12 @@ namespace Views
 
         private int _elementIndex;
 
-        public void SetupElement(Sprite sprite, int index)
+        public void SetupElement(Sprite sprite, int index,Vector2 vector2)
         {
             elementImage.sprite = sprite;
             _elementIndex = index;
+
+            rectElement.anchoredPosition = vector2;
         }
 
         private void OnEnable()

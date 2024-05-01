@@ -21,9 +21,12 @@ namespace Screens
 
         [Header("Prefab")]
         [SerializeField] private ElementPuzzleView puzzleView;
+        [SerializeField] private GridView gridView;
 
         private GridLayoutGroup _gridLayout;
+
         private List<ElementPuzzleView> _elementPuzzleViews = new List<ElementPuzzleView>();
+        private List<GridView> _gridViews = new List<GridView>();
 
         private void Start()
         {
@@ -32,10 +35,8 @@ namespace Screens
 
         public void SetupLevel()
         {
-            var currentLevel = levelsConfig.Levels[0];
-            Vector2 parentMin = elementParents.rect.min;
-            Vector2 parentMax = elementParents.rect.max;
-
+            var currentLevel = levelsConfig.Levels[3];
+           
             if (currentLevel.CountElements <= 9)
             {
                 SetGrid(true);
@@ -45,34 +46,35 @@ namespace Screens
                 SetGrid(false);
             }
 
+            SetupGridViews(currentLevel);
+            SetupElemets(currentLevel);
+        }
+
+        public void SetupGridViews(LevelsConfig.Level currentLevel)
+        {
             for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
             {
-                var elementView = Instantiate(puzzleView, _gridLayout.transform);
-                elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex);
+                var newGridView = Instantiate(gridView, _gridLayout.transform);
+                newGridView.SetupIndex(currentLevel.ElementsPuzzles[i].ElementIndex);
+                _gridViews.Add(newGridView);
+            }
+        }
 
-                //float randomX = UnityEngine.Random.Range(parentMin.x, parentMax.x);
-                //float randomY = UnityEngine.Random.Range(parentMin.y, parentMax.y);
-                
-                //RectTransform elementRect = elementView.GetComponent<RectTransform>();
-                //elementRect.anchoredPosition = new Vector2(randomX, randomY);
+        public void SetupElemets(LevelsConfig.Level currentLevel)
+        {
+            Vector2 parentMin = elementParents.rect.min;
+            Vector2 parentMax = elementParents.rect.max;
 
+            for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
+            {
+                var elementView = Instantiate(puzzleView, elementParents);
+                Vector2 randomPosition = new Vector2(Random.Range(parentMin.x, parentMax.x),
+                                                    Random.Range(parentMin.y, parentMax.y));
+
+
+                elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex, randomPosition);
                 _elementPuzzleViews.Add(elementView);
             }
-
-
-            //for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
-            //{
-            //    var elementView = Instantiate(puzzleView, elementParents);
-            //    elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex);
-
-            //    float randomX = UnityEngine.Random.Range(parentMin.x, parentMax.x);
-            //    float randomY = UnityEngine.Random.Range(parentMin.y, parentMax.y);
-
-            //    RectTransform elementRect = elementView.GetComponent<RectTransform>();
-            //    elementRect.anchoredPosition = new Vector2(randomX, randomY);
-
-            //    _elementPuzzleViews.Add(elementView);
-            //}
         }
 
         public void ClearElements()
@@ -83,6 +85,16 @@ namespace Screens
             }
 
             _elementPuzzleViews.Clear();
+        }
+
+        public void ClearGrids()
+        {
+            for (int i = 0; i < _gridViews.Count; i++)
+            {
+                Destroy(_gridViews[i].gameObject);
+            }
+
+            _gridViews.Clear();
         }
 
         public void SetGrid(bool active)
