@@ -54,7 +54,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3008396624583464128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1575,6 +1575,7 @@ GameObject:
   - component: {fileID: 6661740665482851575}
   - component: {fileID: 6661740665482851576}
   - component: {fileID: 6661740665482851577}
+  - component: {fileID: 932271433}
   m_Layer: 0
   m_Name: WinOrLosePopup
   m_TagString: Untagged
@@ -1665,3 +1666,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &932271433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661740665482851579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3a336c11f3f40bea4ea4c34abb9bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 6661740665482851575}
+  Content: {fileID: 6661740664462529780}
+  IsOpenSound: 0
+  winPanel: {fileID: 6661740664082507837}
+  losePanel: {fileID: 3008396624583464128}
+  nextLevel: {fileID: 6661740665232575875}
+  restartLevel: {fileID: 2303545889383037662}
+  homeLose: {fileID: 4566689094231632028}
+  homeWin: {fileID: 6661740664800236851}
