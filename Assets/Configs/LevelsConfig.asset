@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LevelsConfig
   m_EditorClassIdentifier: 
   Levels:
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: c6756ae788da0475fa3728a11db4355f, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: 9105155127dfc47aab049e565a99990c, type: 3}
       ElementIndex: 1
@@ -33,7 +34,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 0cdc2f9d2c8e8425f8342ce6a5fc9a83, type: 3}
       ElementIndex: 9
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: 5edbdb8c575e64ba3a4e3987b53d0fca, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: 371aac652cd7c4042bb3c5ecb804bfe0, type: 3}
       ElementIndex: 1
@@ -53,7 +55,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: de8e90d4a5c044b3cb5c319602c893bf, type: 3}
       ElementIndex: 9
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: c8c94acda75cd4fb6a3fec10dc0c508b, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: 960379c350f474b4dbf966209e6b545c, type: 3}
       ElementIndex: 1
@@ -73,7 +76,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 85ff7c81323264da191718af1a0a8304, type: 3}
       ElementIndex: 9
-  - CountElements: 16
+  - LevelSprite: {fileID: 21300000, guid: 224e24f63b0444985b5734d0b8cf8a0b, type: 3}
+    CountElements: 16
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: dcad59e4046ac48c0847057bdd8c1573, type: 3}
       ElementIndex: 1
@@ -107,7 +111,8 @@ MonoBehaviour:
       ElementIndex: 15
     - ElementSprite: {fileID: 21300000, guid: fa7b27c94a6da419a9675c1a4772a6da, type: 3}
       ElementIndex: 16
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: 40c301b5c525f49489c2e625acaf5c89, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: 40ca10b0ed294407f9dfd6327a943f40, type: 3}
       ElementIndex: 1
@@ -127,7 +132,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 3a56c701d74ea481291c3857a82d9af0, type: 3}
       ElementIndex: 9
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: e808a9daf4e3848339e0af460c0771ec, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: b3683c2119309417ca5ea5f79bad886b, type: 3}
       ElementIndex: 1
@@ -147,7 +153,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 2d5550bcb20314ba5911bae74a850c84, type: 3}
       ElementIndex: 9
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: adc720c747c8547e5880f8f190bf4757, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: cd3d867d7b75e425385fbdad8684ade5, type: 3}
       ElementIndex: 1
@@ -167,7 +174,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 45831a2bbc02c406486a0d3befdbcecb, type: 3}
       ElementIndex: 9
-  - CountElements: 9
+  - LevelSprite: {fileID: 21300000, guid: edb455bf785d54f7aabb745669db09d3, type: 3}
+    CountElements: 9
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: e9af6b32c4c3e4004bcb187b85d5f45f, type: 3}
       ElementIndex: 1
@@ -187,7 +195,8 @@ MonoBehaviour:
       ElementIndex: 8
     - ElementSprite: {fileID: 21300000, guid: 3ccf4a27a93ff48e58245378f177eab5, type: 3}
       ElementIndex: 9
-  - CountElements: 16
+  - LevelSprite: {fileID: 21300000, guid: eaa241e9a52ff446bbbfced0f714a46a, type: 3}
+    CountElements: 16
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: c948d23634f2941cba7d41d8123ca70c, type: 3}
       ElementIndex: 1
@@ -221,7 +230,8 @@ MonoBehaviour:
       ElementIndex: 15
     - ElementSprite: {fileID: 21300000, guid: bcd70823adc2a4d4e96dbedbd478e9ef, type: 3}
       ElementIndex: 16
-  - CountElements: 16
+  - LevelSprite: {fileID: 21300000, guid: cb08334d9f18e4cb9acba46231558570, type: 3}
+    CountElements: 16
     ElementsPuzzles:
     - ElementSprite: {fileID: 21300000, guid: a7df91cc4122d403697c5b399d790fb7, type: 3}
       ElementIndex: 1

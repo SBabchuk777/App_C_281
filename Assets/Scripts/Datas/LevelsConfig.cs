@@ -13,6 +13,7 @@ namespace Datas
         [Serializable]
         public class Level
         {
+            public Sprite LevelSprite;
             public int CountElements;
             public List<Element> ElementsPuzzles = new List<Element>();
 
