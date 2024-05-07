@@ -9,9 +9,6 @@ namespace Screens
 {
     public class PauseScreen : BaseScreen
     {
-        public static Action RestartGameAction;
-        public static Action ExitGameAction;
-
         [SerializeField] private Button playButton;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button exitButton;
@@ -20,7 +17,7 @@ namespace Screens
         {
             playButton.onClick.AddListener(OnPlayGameClick);
             restartButton.onClick.AddListener(OnRestartGameClick);
-            exitButton.onClick.AddListener(OnOpenStartScreenClick);           
+            exitButton.onClick.AddListener(OnOpenExitScreenClick);           
         }
 
         private void OnPlayGameClick()
@@ -31,15 +28,13 @@ namespace Screens
         private void OnRestartGameClick()
         {
             CloseScreen();
-            RestartGameAction?.Invoke();
+            UIManager.Instance.OpenScreen<RestartScreen>();
         }
 
-        private void OnOpenStartScreenClick()
+        private void OnOpenExitScreenClick()
         {
             CloseScreen();
-            ExitGameAction?.Invoke();
-
-            UIManager.Instance.OpenScreen<StartScreen>();
+            UIManager.Instance.OpenScreen<ExitScreen>();
         }
 
         public override void OpenScreen()

@@ -49,8 +49,8 @@ namespace Screens
 
         private void Start()
         {
-            PauseScreen.RestartGameAction += OnRestartGame;
-            PauseScreen.ExitGameAction += OnExitGame;
+            RestartScreen.RestartGameAction += OnRestartGame;
+            ExitScreen.ExitGameAction += OnExitGame;
         }
 
         public void SetupLevel()
