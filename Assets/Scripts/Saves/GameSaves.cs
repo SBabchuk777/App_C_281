@@ -7,12 +7,37 @@ namespace Saves
 {
     public class GameSaves
     {
-        public static void DeleteKey(string key)
+        private const string LevelKey = "_Level_Key";
+        private int LevelIndex;
+
+        private static GameSaves _instance;
+
+        public static GameSaves Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GameSaves();
+                }
+                return _instance;
+            }
+        }
+
+        public void SaveLevelIndex()
+        {
+            LevelIndex += 1;
+            WriteData<int>(LevelKey,LevelIndex);
+        }
+
+        public int GetLevel() => ReadData<int>(LevelKey);
+
+        public void DeleteKey(string key)
         {
             PlayerPrefs.DeleteKey(key);
         }
 
-        public static T ReadJson<T>(string key) where T : new()
+        public T ReadJson<T>(string key) where T : new()
         {
             if (PlayerPrefs.HasKey(key))
             {
@@ -25,12 +50,12 @@ namespace Saves
             }
         }
 
-        public static void WriteJson<T>(string key, T data)
+        public void WriteJson<T>(string key, T data)
         {
             PlayerPrefs.SetString(key, JsonConvert.SerializeObject(data));
         }
 
-        public static void WriteData<T>(string key, T data)
+        public void WriteData<T>(string key, T data)
         {
             if (typeof(T) == typeof(int))
             {
@@ -56,7 +81,7 @@ namespace Saves
             PlayerPrefs.Save();
         }
 
-        public static T ReadData<T>(string key)
+        public T ReadData<T>(string key)
         {
             if (typeof(T) == typeof(int))
             {

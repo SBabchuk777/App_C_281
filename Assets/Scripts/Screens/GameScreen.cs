@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Datas;
 using Views;
 using Managers;
+using Saves;
 
 namespace Screens
 {
@@ -51,11 +52,21 @@ namespace Screens
         {
             RestartScreen.RestartGameAction += OnRestartGame;
             ExitScreen.ExitGameAction += OnExitGame;
+            WinOrLosePopup.NextLevelAction += OnNextLevel;
+            WinOrLosePopup.OpenStartScreenAction += OnExitGame;
+        }
+
+        private void OnDestroy()
+        {
+            RestartScreen.RestartGameAction -= OnRestartGame;
+            ExitScreen.ExitGameAction -= OnExitGame;
+            WinOrLosePopup.NextLevelAction -= OnNextLevel;
+            WinOrLosePopup.OpenStartScreenAction += OnExitGame;
         }
 
         public void SetupLevel()
         {
-            var currentLevel = levelsConfig.Levels[3];
+            var currentLevel = levelsConfig.Levels[GameSaves.Instance.GetLevel()];
            
             if (currentLevel.CountElements <= 9)
             {
@@ -73,9 +84,16 @@ namespace Screens
 
         public void SpendAttemp()
         {
-            if(_wrongSpendCount == 0)
+            if(_wrongSpendCount == 1)
             {
-                Debug.LogError("You Lose");
+                var winScreen = UIManager.Instance.GetScreen<WinOrLosePopup>();
+
+                if (winScreen != null)
+                {
+                    winScreen.SetupPanel(false);
+                    winScreen.OpenScreen();
+                }
+
                 return;
             }
 
@@ -91,6 +109,16 @@ namespace Screens
             if(_elementPuzzleViews.Count == 0)
             {
                 Debug.LogError("You Win");
+
+                GameSaves.Instance.SaveLevelIndex();
+
+                var winScreen =  UIManager.Instance.GetScreen<WinOrLosePopup>();
+
+                if (winScreen != null)
+                {
+                    winScreen.SetupPanel(true);
+                    winScreen.OpenScreen();
+                }
             }
         }
 
@@ -127,15 +155,22 @@ namespace Screens
 
         }
 
+        private void OnNextLevel()
+        {
+            AllClearListes();
+            UIManager.Instance.OpenScreen<LevelScreen>();
+        }
+
         private void OnRestartGame()
         {
             AllClearListes();
-            SetupLevel();
+            UIManager.Instance.OpenScreen<LevelScreen>();
         }
 
         private void OnExitGame()
         {
             AllClearListes();
+            CloseScreen();
             CloseScreen();
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Datas;
 using UnityEngine.UI;
+using Saves;
 using Managers;
 
 namespace Screens
@@ -32,7 +33,7 @@ namespace Screens
 
         public override void OpenScreen()
         {
-            levelImage.sprite = levelsConfig.Levels[3].LevelSprite;
+            levelImage.sprite = levelsConfig.Levels[GameSaves.Instance.GetLevel()].LevelSprite;
 
             base.OpenScreen();
         }
