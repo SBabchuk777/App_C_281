@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Managers;
+using Views;
 
 namespace Screens
 {
@@ -11,6 +12,8 @@ namespace Screens
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button dailyBonusButton;
         [SerializeField] private Button settingsButton;
+
+        [SerializeField] private CurrencyView currencyView;
 
         private void Awake()
         {
@@ -41,6 +44,7 @@ namespace Screens
 
         public override void OpenScreen()
         {
+            currencyView.UpdateCoinText();
             base.OpenScreen();
         }
 

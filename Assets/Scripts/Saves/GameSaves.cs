@@ -8,7 +8,10 @@ namespace Saves
     public class GameSaves
     {
         private const string LevelKey = "_Level_Key";
+        private const string StartCoinKey = "_Star_Coin_Key";
+
         private int LevelIndex;
+        private int StarCoin;
 
         private static GameSaves _instance;
 
@@ -30,6 +33,13 @@ namespace Saves
             WriteData<int>(LevelKey,LevelIndex);
         }
 
+        public void AddStarCoin(int coin)
+        {
+            StarCoin += coin;
+            WriteData<int>(StartCoinKey, StarCoin);
+        }
+
+        public int GetCoin() => ReadData<int>(StartCoinKey);
         public int GetLevel() => ReadData<int>(LevelKey);
 
         public void DeleteKey(string key)

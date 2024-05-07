@@ -263,7 +263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}
   m_sharedMaterial: {fileID: 2122723484779808487, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}
@@ -700,6 +700,7 @@ MonoBehaviour:
   gridView: {fileID: 1652392467717369304, guid: 0acb68f8e13a64c5d9d537acdf8933b4, type: 3}
   wrongView: {fileID: 4305535206801283569, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
   pauseButton: {fileID: 1022781324534460813}
+  levelText: {fileID: 7004076321102413570}
 --- !u!1 &7081709038818070096
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using Datas;
 using Views;
 using Managers;
 using Saves;
+using TMPro;
 
 namespace Screens
 {
@@ -31,7 +32,9 @@ namespace Screens
         [SerializeField] private GridView gridView;
         [SerializeField] private WrongView wrongView;
 
+        [Header("UI")]
         [SerializeField] private Button pauseButton;
+        [SerializeField] private TMP_Text levelText;
 
         private GridLayoutGroup _gridLayout;
 
@@ -42,6 +45,7 @@ namespace Screens
 
         private int _countWrongs = 4;
         private int _wrongSpendCount;
+        private int _rewardCoin = 100;
 
         private void Awake()
         {
@@ -66,6 +70,7 @@ namespace Screens
 
         public void SetupLevel()
         {
+            UpdateLevelText();
             var currentLevel = levelsConfig.Levels[GameSaves.Instance.GetLevel()];
            
             if (currentLevel.CountElements <= 9)
@@ -108,9 +113,8 @@ namespace Screens
 
             if(_elementPuzzleViews.Count == 0)
             {
-                Debug.LogError("You Win");
-
                 GameSaves.Instance.SaveLevelIndex();
+                GameSaves.Instance.AddStarCoin(_rewardCoin);
 
                 var winScreen =  UIManager.Instance.GetScreen<WinOrLosePopup>();
 
@@ -177,6 +181,11 @@ namespace Screens
         private void OpenPauseScreen()
         {
             UIManager.Instance.OpenScreen<PauseScreen>();
+        }
+
+        private void UpdateLevelText()
+        {
+            levelText.text = "Level " + (GameSaves.Instance.GetLevel() + 1).ToString();
         }
 
         #region SetupViews

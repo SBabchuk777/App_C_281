@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}
   m_sharedMaterial: {fileID: 2122723484779808487, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 1250167684384757679}
   - component: {fileID: 1250167684384757665}
   - component: {fileID: 1250167684384757678}
+  - component: {fileID: 7552269395948201203}
   m_Layer: 5
   m_Name: ScorePanel
   m_TagString: Untagged
@@ -523,6 +524,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7552269395948201203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250167684384757676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917769d2f0e47445a8052c5bff6a8335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1250167684208276404}
 --- !u!1 &1250167684928201962
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +698,7 @@ MonoBehaviour:
   startGameButton: {fileID: 1250167685735590552}
   dailyBonusButton: {fileID: 1250167685494370387}
   settingsButton: {fileID: 1250167684249003925}
+  currencyView: {fileID: 7552269395948201203}
 --- !u!1 &1250167685494370385
 GameObject:
   m_ObjectHideFlags: 0
