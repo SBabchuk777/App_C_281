@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Managers;
 
 namespace Screens
 {
@@ -20,7 +21,10 @@ namespace Screens
 
         private void OnStartGameButtonClick()
         {
+            UIManager.Instance.OpenScreen<GameScreen>();
+            UIManager.Instance.OpenScreen<LevelScreen>();
 
+            CloseScreen();
         }
 
         private void OnOpenSpinScreenClick()

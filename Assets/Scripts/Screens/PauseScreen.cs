@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Managers;
 
 namespace Screens
 {
@@ -37,6 +38,8 @@ namespace Screens
         {
             CloseScreen();
             ExitGameAction?.Invoke();
+
+            UIManager.Instance.OpenScreen<StartScreen>();
         }
 
         public override void OpenScreen()
