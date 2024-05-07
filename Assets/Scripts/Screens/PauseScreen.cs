@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Screens
 {
     public class PauseScreen : BaseScreen
     {
+        public static Action RestartGameAction;
+        public static Action ExitGameAction;
+
         [SerializeField] private Button playButton;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button exitButton;
@@ -20,17 +24,19 @@ namespace Screens
 
         private void OnPlayGameClick()
         {
-
+            CloseScreen();
         }
 
         private void OnRestartGameClick()
         {
-
+            CloseScreen();
+            RestartGameAction?.Invoke();
         }
 
         private void OnOpenStartScreenClick()
         {
-
+            CloseScreen();
+            ExitGameAction?.Invoke();
         }
 
         public override void OpenScreen()

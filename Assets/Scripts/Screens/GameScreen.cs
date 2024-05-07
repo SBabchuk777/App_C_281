@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Datas;
 using Views;
-using UnityEngine.UIElements;
+using Managers;
 
 namespace Screens
 {
@@ -30,6 +30,8 @@ namespace Screens
         [SerializeField] private GridView gridView;
         [SerializeField] private WrongView wrongView;
 
+        [SerializeField] private Button pauseButton;
+
         private GridLayoutGroup _gridLayout;
 
         private List<ElementPuzzleView> _elementPuzzleViews = new List<ElementPuzzleView>();
@@ -40,9 +42,17 @@ namespace Screens
         private int _countWrongs = 4;
         private int _wrongSpendCount;
 
+        private void Awake()
+        {
+            pauseButton.onClick.AddListener(OpenPauseScreen);
+        }
+
         private void Start()
         {
             SetupLevel();
+
+            PauseScreen.RestartGameAction += OnRestartGame;
+            PauseScreen.ExitGameAction += OnExitGame;
         }
 
         public void SetupLevel()
@@ -70,8 +80,6 @@ namespace Screens
                 Debug.LogError("You Lose");
                 return;
             }
-
-            //Debug.LogError("Count wrongs: " + _wrongSpendCount);
 
             _wrongViews[_wrongSpendCount-1].SetWrong(true);
             _wrongSpendCount--;
@@ -121,6 +129,23 @@ namespace Screens
 
         }
 
+        private void OnRestartGame()
+        {
+            AllClearListes();
+            SetupLevel();
+        }
+
+        private void OnExitGame()
+        {
+            AllClearListes();
+            CloseScreen();
+        }
+
+        private void OpenPauseScreen()
+        {
+            UIManager.Instance.OpenScreen<PauseScreen>();
+        }
+
         #region SetupViews
 
         public void SetupGridViews(LevelsConfig.Level currentLevel)
@@ -164,6 +189,13 @@ namespace Screens
         #endregion
 
         #region Clearing Lists
+
+        public void AllClearListes()
+        {
+            ClearElements();
+            ClearGrids();
+            ClearWrongsViews();
+        }
 
         public void ClearElements()
         {

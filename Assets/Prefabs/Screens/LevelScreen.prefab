@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022711517590946117}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 5022711517727146939}
   - component: {fileID: 5022711517727146937}
   - component: {fileID: 5022711517727146936}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5022711517735409437}
   - component: {fileID: 5022711517735409435}
   - component: {fileID: 5022711517735409434}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 5022711517755814144}
   - component: {fileID: 5022711517755814206}
   - component: {fileID: 5022711517755814145}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LevelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 5022711517816900470}
   - component: {fileID: 5022711517816900468}
   - component: {fileID: 5022711517816900471}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 5022711518045411382}
   - component: {fileID: 5022711518045411385}
   - component: {fileID: 5022711518045411380}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LevelScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,8 +406,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &5022711518045411382
 MonoBehaviour:
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 5022711518512476180}
   - component: {fileID: 5022711518512476178}
   - component: {fileID: 5022711518512476181}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 5022711518517911395}
   - component: {fileID: 5022711518517911394}
   - component: {fileID: 5022711518517911397}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 5022711519097860227}
   - component: {fileID: 5022711519097860225}
   - component: {fileID: 5022711519097860224}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TaskDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022711519458477956}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}

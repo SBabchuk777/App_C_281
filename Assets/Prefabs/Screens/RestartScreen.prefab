@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4322407537181540867}
   - component: {fileID: 4322407537181540925}
   - component: {fileID: 4322407537181540924}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4322407537304819108}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4322407537391721992}
   - component: {fileID: 4322407537391721999}
   - component: {fileID: 4322407537391721998}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 4322407537621433624}
   - component: {fileID: 4322407537621433631}
   - component: {fileID: 4322407537621433626}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RestartScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,8 +294,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &4322407537621433624
 MonoBehaviour:
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 4322407538088222481}
   - component: {fileID: 4322407538088222483}
   - component: {fileID: 4322407538088222482}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 4322407538110202247}
   - component: {fileID: 4322407538110202241}
   - component: {fileID: 4322407538110202240}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 4322407538471562156}
   - component: {fileID: 4322407538471562163}
   - component: {fileID: 4322407538471562162}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4322407538646123962}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 4322407538787522651}
   - component: {fileID: 4322407538787522645}
   - component: {fileID: 4322407538787522644}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RestartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 4322407538841788393}
   - component: {fileID: 4322407538841788395}
   - component: {fileID: 4322407538841788394}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}

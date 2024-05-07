@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074958444688057600}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,9 +33,9 @@ RectTransform:
   m_Father: {fileID: 7074958446525034751}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -169.3}
   m_SizeDelta: {x: 600, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7074958444897573351
@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 7074958444897573371}
   - component: {fileID: 7074958444897573348}
   - component: {fileID: 7074958444897573349}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074958445083201190}
   - component: {fileID: 7074958445083201189}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 7074958445163515820}
   - component: {fileID: 7074958445163515821}
   - component: {fileID: 7074958445163515822}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TermsOfUseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,9 +279,9 @@ RectTransform:
   m_Father: {fileID: 7074958445565649780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -169.23}
   m_SizeDelta: {x: 760, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7074958445163515820
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 7074958445283937357}
   - component: {fileID: 7074958445283937347}
   - component: {fileID: 7074958445283937356}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074958445309870401}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 7074958445487917336}
   - component: {fileID: 7074958445487917342}
   - component: {fileID: 7074958445487917343}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 7074958445495220105}
   - component: {fileID: 7074958445495220111}
   - component: {fileID: 7074958445495220104}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PlayerNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 7074958445565136261}
   - component: {fileID: 7074958445565136262}
   - component: {fileID: 7074958445565136263}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PrivacyPolicyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,9 +727,9 @@ RectTransform:
   m_Father: {fileID: 7074958445565649780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -50}
   m_SizeDelta: {x: 760, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7074958445565136261
@@ -824,7 +824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074958445565649780}
   - component: {fileID: 7074958445565649739}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ButtonsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 7074958445619761819}
   - component: {fileID: 7074958445619761817}
   - component: {fileID: 7074958445619761818}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074958445636761371}
   - component: {fileID: 7074958445636761370}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074958445778728140}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,9 +1074,9 @@ RectTransform:
   m_Father: {fileID: 7074958446525034751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -62.5}
   m_SizeDelta: {x: 600, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7074958445812263404
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 7074958445812263393}
   - component: {fileID: 7074958445812263394}
   - component: {fileID: 7074958445812263399}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SettingsScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,8 +1139,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7074958445812263393
 MonoBehaviour:
@@ -1208,7 +1208,7 @@ GameObject:
   - component: {fileID: 7074958445879807733}
   - component: {fileID: 7074958445879807691}
   - component: {fileID: 7074958445879807732}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 7074958445968190303}
   - component: {fileID: 7074958445968190301}
   - component: {fileID: 7074958445968190302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 7074958445984383826}
   - component: {fileID: 7074958445984383824}
   - component: {fileID: 7074958445984383825}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Checkmark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 7074958446383000430}
   - component: {fileID: 7074958446383000428}
   - component: {fileID: 7074958446383000429}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SoundText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 7074958446515757082}
   - component: {fileID: 7074958446515757080}
   - component: {fileID: 7074958446515757081}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074958446525034751}
   - component: {fileID: 7074958446525034750}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SFXPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 7074958446550085073}
   - component: {fileID: 7074958446550085079}
   - component: {fileID: 7074958446550085072}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PrivacyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1904,7 +1904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7074958446732402333}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 7074958446817471568}
   - component: {fileID: 7074958446817471574}
   - component: {fileID: 7074958446817471575}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}

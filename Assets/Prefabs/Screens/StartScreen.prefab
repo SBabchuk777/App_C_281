@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1250167683833802090}
   - component: {fileID: 1250167683833802092}
   - component: {fileID: 1250167683833802093}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1250167683978299526}
   - component: {fileID: 1250167683978299544}
   - component: {fileID: 1250167683978299545}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250167684075369071}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 1250167684208276405}
   - component: {fileID: 1250167684208276407}
   - component: {fileID: 1250167684208276404}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 1250167684249003927}
   - component: {fileID: 1250167684249003924}
   - component: {fileID: 1250167684249003925}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 1250167684384757679}
   - component: {fileID: 1250167684384757665}
   - component: {fileID: 1250167684384757678}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ScorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250167684928201965}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 1250167685036749101}
   - component: {fileID: 1250167685036749098}
   - component: {fileID: 1250167685036749103}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StartScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,8 +623,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1250167685036749101
 MonoBehaviour:
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 1250167685494370389}
   - component: {fileID: 1250167685494370386}
   - component: {fileID: 1250167685494370387}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DailyBonusButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 1250167685735590554}
   - component: {fileID: 1250167685735590555}
   - component: {fileID: 1250167685735590552}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

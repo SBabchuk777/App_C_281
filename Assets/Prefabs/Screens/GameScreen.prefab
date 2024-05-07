@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8710654587500400610}
   - component: {fileID: 1151894726992390274}
   - component: {fileID: 6790948808787404364}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3200987373119706508}
   - component: {fileID: 8789478337758632734}
   - component: {fileID: 1022781324534460813}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PausedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 928021990945724514}
   - component: {fileID: 4471097689624291400}
   - component: {fileID: 7004076321102413570}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6901506879586552709}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ElementsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 606547451607179169}
   - component: {fileID: 8695138781247678812}
   - component: {fileID: 4203897786788300690}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WrongsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 7081709038610552884}
   - component: {fileID: 7081709038610552885}
   - component: {fileID: 7081709038610552886}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ContentCard_3x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 7081709038702485589}
   - component: {fileID: 7081709038702485590}
   - component: {fileID: 7081709038702485595}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1558470845
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7081709038702485589
 MonoBehaviour:
@@ -699,6 +699,7 @@ MonoBehaviour:
   puzzleView: {fileID: 4489510737144087817, guid: 6e58b04c0d59e4205b48ee8bd77d4051, type: 3}
   gridView: {fileID: 1652392467717369304, guid: 0acb68f8e13a64c5d9d537acdf8933b4, type: 3}
   wrongView: {fileID: 4305535206801283569, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
+  pauseButton: {fileID: 1022781324534460813}
 --- !u!1 &7081709038818070096
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +711,7 @@ GameObject:
   - component: {fileID: 7081709038818070103}
   - component: {fileID: 7081709038818070101}
   - component: {fileID: 7081709038818070102}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7081709039516776578}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +831,7 @@ GameObject:
   - component: {fileID: 7081709039935919017}
   - component: {fileID: 7081709039935919018}
   - component: {fileID: 7081709039935919019}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ContentCard_4x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7081709040023228092}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +969,7 @@ GameObject:
   - component: {fileID: 3703311484569616113}
   - component: {fileID: 8391951119390388002}
   - component: {fileID: 3941776493106393607}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PuzzlesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,6 +1100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7836437788970419752}
     m_Modifications:
+    - target: {fileID: 1423129185824723824, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4403155098407339986, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1183,9 +1188,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8093809615537824470, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8995674478557622942, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
       propertyPath: m_Name
       value: WrongView
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995674478557622942, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8995674478557622942, guid: e3d39d3cd30e74e5d95b261396b23333, type: 3}
       propertyPath: m_IsActive

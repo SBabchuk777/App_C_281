@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1465536428427329317}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LoseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3008396624583464128}
   - component: {fileID: 5397386420582761046}
   - component: {fileID: 933820172126188341}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LoseContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4157180497057750468}
   - component: {fileID: 2223661702880164839}
   - component: {fileID: 4566689094231632028}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 5717211507317837727}
   - component: {fileID: 7038948983284131273}
   - component: {fileID: 2303545889383037662}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 7178599504851431466}
   - component: {fileID: 4594689285351109930}
   - component: {fileID: 3257465320042632543}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LoseContentText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 8961875286831777198}
   - component: {fileID: 8723595421845556318}
   - component: {fileID: 59040895957707872}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661740663722892296}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RewardPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 6661740663919384126}
   - component: {fileID: 6661740663919384124}
   - component: {fileID: 6661740663919384125}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 6661740664082507837}
   - component: {fileID: 6661740664082507835}
   - component: {fileID: 6661740664082507836}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661740664098156704}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6661740664462529780}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 6661740664468740633}
   - component: {fileID: 6661740664468740631}
   - component: {fileID: 6661740664468740632}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinContentText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 6661740664686073302}
   - component: {fileID: 6661740664686073300}
   - component: {fileID: 6661740664686073301}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 6661740664800236849}
   - component: {fileID: 6661740664800236850}
   - component: {fileID: 6661740664800236851}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1301,7 +1301,7 @@ GameObject:
   - component: {fileID: 6661740665116414881}
   - component: {fileID: 6661740665116414879}
   - component: {fileID: 6661740665116414880}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 6661740665117770847}
   - component: {fileID: 6661740665117770845}
   - component: {fileID: 6661740665117770846}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 6661740665232575873}
   - component: {fileID: 6661740665232575874}
   - component: {fileID: 6661740665232575875}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1576,7 @@ GameObject:
   - component: {fileID: 6661740665482851576}
   - component: {fileID: 6661740665482851577}
   - component: {fileID: 932271433}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WinOrLosePopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1623,8 +1623,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &6661740665482851576
 MonoBehaviour:

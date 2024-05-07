@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3305633257414036970}
   - component: {fileID: 3305633257414036971}
   - component: {fileID: 3305633257414036980}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3305633257431497620}
   - component: {fileID: 3305633257431497610}
   - component: {fileID: 3305633257431497611}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3305633257484085842}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 3305633257599036916}
   - component: {fileID: 3305633257599036906}
   - component: {fileID: 3305633257599036907}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 3305633257643369705}
   - component: {fileID: 3305633257643369711}
   - component: {fileID: 3305633257643369704}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3305633257720928159}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UIScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 3305633257987796683}
   - component: {fileID: 3305633257987796692}
   - component: {fileID: 3305633257987796693}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 3305633258991334102}
   - component: {fileID: 3305633258991334100}
   - component: {fileID: 3305633258991334101}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 3305633259129164419}
   - component: {fileID: 3305633259129164417}
   - component: {fileID: 3305633259129164418}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 3305633259411367621}
   - component: {fileID: 3305633259411367622}
   - component: {fileID: 3305633259411367675}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ExitScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,8 +881,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1558470845
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &3305633259411367621
 MonoBehaviour:
