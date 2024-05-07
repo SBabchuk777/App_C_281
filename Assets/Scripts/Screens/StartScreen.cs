@@ -34,7 +34,9 @@ namespace Screens
 
         private void OnOpenSettingsScreenClick()
         {
+            CloseScreen();
 
+            UIManager.Instance.OpenScreen<SettingsScreen>();
         }
 
         public override void OpenScreen()
