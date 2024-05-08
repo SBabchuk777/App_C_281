@@ -51,6 +51,7 @@ namespace Saves
 
         public void AddStarCoin(int coin)
         {
+            StarCoin = ReadData<int>(StartCoinKey);
             StarCoin += coin;
             WriteData<int>(StartCoinKey, StarCoin);
         }
