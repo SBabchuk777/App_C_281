@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using System;
 
 namespace Saves
 {
@@ -9,9 +10,13 @@ namespace Saves
     {
         private const string LevelKey = "_Level_Key";
         private const string StartCoinKey = "_Star_Coin_Key";
+        private const string UpdateRewardTimeKey = "_Update_Reward_Time_Key";
+        private const string ClaimedRewardKey = "_Claimed_Reward_Key";
 
         private int LevelIndex;
         private int StarCoin;
+
+        private static bool IsClaimReward;
 
         private static GameSaves _instance;
 
@@ -56,6 +61,43 @@ namespace Saves
             WriteData<int>(StartCoinKey, StarCoin);
         }
 
+        public void ClaimReward(bool claim)
+        {
+            IsClaimReward = claim;
+            WriteData<bool>(ClaimedRewardKey, IsClaimReward);
+        }
+
+        public bool IsAccessAvailable()
+        {
+            DateTime currentDate = DateTime.Now.Date;
+
+            if (!GetClaimReward())
+            {
+                WriteData<string>(UpdateRewardTimeKey, currentDate.ToString("O"));
+                return true;
+            }
+
+            string lastAccessDateStr = ReadData<string>(UpdateRewardTimeKey);
+            DateTime lastAccessDate;
+
+            if (!DateTime.TryParse(lastAccessDateStr, out lastAccessDate))
+            {
+                return false;
+            }
+
+            bool isNewDay = currentDate > lastAccessDate;
+
+
+            if (isNewDay)
+            {
+                WriteData<string>(UpdateRewardTimeKey, currentDate.ToString("O"));
+                ClaimReward(false);
+            }
+
+            return isNewDay;
+        }
+
+        public bool GetClaimReward() => ReadData<bool>(ClaimedRewardKey);
         public int GetCoin() => ReadData<int>(StartCoinKey);
         public int GetLevel() => ReadData<int>(LevelKey);
 

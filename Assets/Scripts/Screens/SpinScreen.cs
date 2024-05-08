@@ -110,7 +110,7 @@ namespace Screens
 
         private void StartGameSpin()
         {
-            //GameSaves.ClaimReward(true);
+            GameSaves.Instance.ClaimReward(true);
             //AudioManager.Instance.ScrollSlotSound();
 
             SetCancelButtonNegative(false);  
