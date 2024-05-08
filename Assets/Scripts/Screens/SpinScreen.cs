@@ -15,21 +15,27 @@ namespace Screens
         public static event Action<bool, bool> ScrollSpin;
 
         [SerializeField] private List<SlotView> slotViews = new List<SlotView>();
-        [SerializeField] private Button spinButton;
-        [SerializeField] private Button menuButton;
 
+        [SerializeField] private Button bonusButton;
+
+        [Header("Text")]
         [SerializeField] private RectTransform firstText;
         [SerializeField] private RectTransform loseText;
         [SerializeField] private RectTransform winText;
 
-        public static bool IsJackPotChecked = false;
+        [Header("Images")]
+        [SerializeField] private Sprite claimRewardSprite;
+        [SerializeField] private Sprite menuSprite;
+        [SerializeField] private Sprite spinSprite;
 
-        private int _coinJackPot = 100;
+        public  bool IsJackPotChecked = false;
+        private bool isSpin = false;
+
+        private int _coinJackPot = 100;    
 
         private void Awake()
         {
-            spinButton.onClick.AddListener(StartGameSpin);
-            menuButton.onClick.AddListener(OnOpenStartScreen);
+            bonusButton.onClick.AddListener(StartGameSpin);
         }
 
         private void Start()
@@ -74,7 +80,7 @@ namespace Screens
 
         private void SetCancelButtonNegative(bool active)
         {
-            spinButton.enabled = active;
+            bonusButton.enabled = active;
         }
 
         private async void OnCheckJackPot()
@@ -85,7 +91,7 @@ namespace Screens
 
                 if (slotViews.All(slot => slot.SpinImage.sprite.name == key))
                 {
-                    GameSaves.Instance.AddStarCoin(_coinJackPot);
+                    
                     IsJackPotChecked = true;
                    // AudioManager.Instance.WinSlotSound();
                 }
@@ -97,8 +103,9 @@ namespace Screens
 
             await Task.Delay(700);
 
+            SetCancelButtonNegative(true);
             SetTextJackpot(IsJackPotChecked);
-            menuButton.gameObject.SetActive(true);
+            SetButtons();
         }
 
         private void StartGameSpin()
@@ -106,25 +113,55 @@ namespace Screens
             //GameSaves.ClaimReward(true);
             //AudioManager.Instance.ScrollSlotSound();
 
-            SetCancelButtonNegative(false);
+            SetCancelButtonNegative(false);  
 
-            for (int i = 0; i < slotViews.Count; i++)
+            if (!isSpin)
             {
-                slotViews[i].StartSpin();
+                for (int i = 0; i < slotViews.Count; i++)
+                {
+                    slotViews[i].StartSpin();
+                }
+
+                isSpin = true;
+            }
+            else if(isSpin && IsJackPotChecked)
+            {
+                IsJackPotChecked = false;
+                GameSaves.Instance.AddStarCoin(_coinJackPot);
+                SetButtons();
+                SetCancelButtonNegative(true);
+            }
+            else if (isSpin && !IsJackPotChecked)
+            {
+                OnOpenStartScreen();
+                SetButtons();
+            }
+        }
+
+        public void SetButtons()
+        {
+            if (!isSpin)
+            {
+                bonusButton.image.sprite = spinSprite;
+            }
+            else if (isSpin && IsJackPotChecked)
+                bonusButton.image.sprite = claimRewardSprite;
+            else if (isSpin && !IsJackPotChecked)
+            {
+                bonusButton.image.sprite = menuSprite;
             }
         }
 
         public override void OpenScreen()
         {
+            SetButtons();
             firstText.gameObject.SetActive(true);
-            menuButton.gameObject.SetActive(false);
             SetCancelButtonNegative(true);
             base.OpenScreen();
         }
 
         public void NotActiveObject()
         {
-            menuButton.gameObject.SetActive(false);
             winText.gameObject.SetActive(false);
             loseText.gameObject.SetActive(false);
         }
@@ -141,7 +178,9 @@ namespace Screens
 
         public override void CloseScreen()
         {
+            SetCancelButtonNegative(true);
             IsJackPotChecked = false;
+            isSpin = false;
             base.CloseScreen();
         }
     }

@@ -1112,11 +1112,14 @@ MonoBehaviour:
   - {fileID: 7904416220992054909}
   - {fileID: 6251030980119789720}
   - {fileID: 4128768252087616975}
-  spinButton: {fileID: 5874790413108376695}
-  menuButton: {fileID: 2136287936468335827}
+  bonusButton: {fileID: 5874790413108376695}
   firstText: {fileID: 5874790413371487460}
   loseText: {fileID: 5874790412483963625}
   winText: {fileID: 5874790412944064394}
+  claimRewardSprite: {fileID: 21300000, guid: 0b6f2a527271847d59adeefa4493a0bb, type: 3}
+  menuSprite: {fileID: 21300000, guid: 964ef683898204c24a0ecbe94719d8f4, type: 3}
+  spinSprite: {fileID: 21300000, guid: 6b7ba394ad9754496827eea1e0136c3e, type: 3}
+  IsJackPotChecked: 0
 --- !u!1 &5874790414100996055
 GameObject:
   m_ObjectHideFlags: 0
