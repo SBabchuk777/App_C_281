@@ -32,7 +32,8 @@ namespace Screens
 
         private void OnOpenSpinScreenClick()
         {
-
+            CloseScreen();
+            UIManager.Instance.OpenScreen<SpinScreen>();
         }
 
         private void OnOpenSettingsScreenClick()

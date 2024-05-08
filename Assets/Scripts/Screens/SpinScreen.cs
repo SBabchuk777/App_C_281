@@ -24,7 +24,7 @@ namespace Screens
 
         public static bool IsJackPotChecked = false;
 
-        private int _coinJackPot = 500;
+        private int _coinJackPot = 100;
 
         private void Awake()
         {
@@ -35,6 +35,28 @@ namespace Screens
         private void Start()
         {
             slotViews[2].CheckKeyAction += OnCheckJackPot;
+            slotViews[2].SetRandomSlotsAction += OnSetRandomImage;
+        }
+
+        private void OnDestroy()
+        {
+            slotViews[2].CheckKeyAction -= OnCheckJackPot;
+            slotViews[2].SetRandomSlotsAction -= OnSetRandomImage;
+        }
+
+        private void OnSetRandomImage()
+        {
+            var randomIndex = UnityEngine.Random.Range(0,100);
+
+            if(randomIndex % 2 == 0)
+            {
+                var randomImage = slotViews[2].GetRandomIndex();
+
+                for (int i = 0; i < slotViews.Count; i++)
+                {
+                    slotViews[i].SpinImage.sprite = slotViews[i].SpinSprites[randomImage];
+                }
+            }
         }
 
         private void OnOpenStartScreen()
@@ -59,11 +81,11 @@ namespace Screens
         {
             if (!IsJackPotChecked)
             {
-                var key = slotViews[0].Key;
+                var key = slotViews[0].SpinImage.sprite.name;
 
-                if (slotViews.All(slot => slot.Key == key))
+                if (slotViews.All(slot => slot.SpinImage.sprite.name == key))
                 {
-                    //GameSaves.AddCoin(_coinJackPot);
+                    GameSaves.Instance.AddStarCoin(_coinJackPot);
                     IsJackPotChecked = true;
                    // AudioManager.Instance.WinSlotSound();
                 }
