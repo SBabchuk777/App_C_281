@@ -70,9 +70,11 @@ namespace Screens
 
         public void SetupLevel()
         {
+            GameSaves.Instance.SetLevel();
+
             UpdateLevelText();
             var currentLevel = levelsConfig.Levels[GameSaves.Instance.GetLevel()];
-           
+
             if (currentLevel.CountElements <= 9)
             {
                 SetGrid(true);
@@ -89,7 +91,9 @@ namespace Screens
 
         public void SpendAttemp()
         {
-            if(_wrongSpendCount == 1)
+            _wrongViews[_wrongSpendCount - 1].SetWrong(true);
+
+            if (_wrongSpendCount == 1)
             {
                 var winScreen = UIManager.Instance.GetScreen<WinOrLosePopup>();
 
@@ -101,8 +105,7 @@ namespace Screens
 
                 return;
             }
-
-            _wrongViews[_wrongSpendCount-1].SetWrong(true);
+           
             _wrongSpendCount--;
         }
 

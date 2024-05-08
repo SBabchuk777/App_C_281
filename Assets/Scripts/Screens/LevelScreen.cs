@@ -5,6 +5,7 @@ using Datas;
 using UnityEngine.UI;
 using Saves;
 using Managers;
+using TMPro;
 
 namespace Screens
 {
@@ -13,6 +14,7 @@ namespace Screens
         [SerializeField] private LevelsConfig levelsConfig;
         [SerializeField] private Image levelImage;
         [SerializeField] private Button startButton;
+        [SerializeField] private TMP_Text levelText;
 
         private void Awake()
         {
@@ -33,7 +35,10 @@ namespace Screens
 
         public override void OpenScreen()
         {
+            GameSaves.Instance.SetLevel();
+
             levelImage.sprite = levelsConfig.Levels[GameSaves.Instance.GetLevel()].LevelSprite;
+            levelText.text = "Level " + (GameSaves.Instance.GetLevel() + 1).ToString();
 
             base.OpenScreen();
         }

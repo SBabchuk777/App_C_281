@@ -467,6 +467,7 @@ MonoBehaviour:
   levelsConfig: {fileID: 11400000, guid: da0d29ac410124b6eaddeacaa02e047c, type: 2}
   levelImage: {fileID: 5022711517755814145}
   startButton: {fileID: 5022711518517911397}
+  levelText: {fileID: 5022711518512476181}
 --- !u!1 &5022711518512476183
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}
   m_sharedMaterial: {fileID: 2122723484779808487, guid: 1ed8ea2a5f6d1480e82f9ae35f439e61, type: 2}

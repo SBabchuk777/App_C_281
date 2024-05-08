@@ -29,8 +29,24 @@ namespace Saves
 
         public void SaveLevelIndex()
         {
+            LevelIndex = ReadData<int>(LevelKey);
+
             LevelIndex += 1;
+
             WriteData<int>(LevelKey,LevelIndex);
+
+            SetLevel();
+        }
+
+        public void SetLevel()
+        {
+            LevelIndex = ReadData<int>(LevelKey);
+
+            if (LevelIndex >= 10)
+            {
+                LevelIndex = 0;
+                WriteData<int>(LevelKey, LevelIndex);
+            }
         }
 
         public void AddStarCoin(int coin)
