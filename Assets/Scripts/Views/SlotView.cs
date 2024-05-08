@@ -24,7 +24,7 @@ namespace Views
 
         private void OnEnable()
         {
-            slotImages[0].rectTransform.position = mainImage.position;
+            //slotImages[0].rectTransform.position = mainImage.position;
         }
 
         private void OnDisable()
@@ -58,7 +58,7 @@ namespace Views
                     if (_spinSequence.Elapsed() >= _spinDuration)
                     {
                         _spinSequence.Kill();
-                        var lastImage = slotImages[UnityEngine.Random.Range(0, slotImages.Count - 1)]; 
+                        var lastImage = slotImages[UnityEngine.Random.Range(0, slotImages.Count - 1)];
 
                         lastImage.rectTransform.DOMove(mainImage.position, 0.5f)
                             .SetEase(Ease.Linear)
