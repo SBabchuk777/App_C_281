@@ -22,7 +22,6 @@ namespace Views
 
         [SerializeField] private List<Image> slotImages = new List<Image>();
         [SerializeField] private List<Sprite> spinSprites = new List<Sprite>();
-        [SerializeField] private List<RectTransform> startPosition = new List<RectTransform>();
 
         private bool isSpinning = false;
 
