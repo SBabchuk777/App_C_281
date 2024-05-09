@@ -24,18 +24,18 @@ namespace UserProfile.UI
         }
         private void CancelButton()
         {
-            //AudioManager.Instance.ClickButtonSound();
+            AudioManager.Instance.ButtonClickSound();
         }
         public async void MakeNewPicture()
         {
-            //AudioManager.Instance.ClickButtonSound();
+            AudioManager.Instance.ButtonClickSound();
             await Task.Delay(50);
             NativeCamera.TakePicture(LoadImageByPath);
         }
 
         public async void SelectPictureFromGallery()
         {
-            //AudioManager.Instance.ClickButtonSound();
+            AudioManager.Instance.ButtonClickSound();
             await Task.Delay(50);
             NativeGallery.GetImageFromGallery(LoadImageByPath);
         }

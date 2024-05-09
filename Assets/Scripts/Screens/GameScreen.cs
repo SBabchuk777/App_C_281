@@ -253,6 +253,13 @@ namespace Screens
             levelText.text = "Level " + (GameSaves.Instance.GetLevel() + 1).ToString();
         }
 
+        public override void OpenScreen()
+        {
+            AudioManager.Instance.BackgroundMusicPlay(false);
+            AudioManager.Instance.GameMusicPlay(true);
+            base.OpenScreen();
+        }
+
         #region SetupViews
 
         public void SetupGridViews(LevelsConfig.Level currentLevel)

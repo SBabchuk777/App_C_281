@@ -45,6 +45,8 @@ namespace Screens
 
         public override void OpenScreen()
         {
+            AudioManager.Instance.BackgroundMusicPlay(true);
+            AudioManager.Instance.GameMusicPlay(false);
             currencyView.UpdateCoinText();
             base.OpenScreen();
         }

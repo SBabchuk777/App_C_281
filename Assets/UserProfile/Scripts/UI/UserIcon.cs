@@ -27,7 +27,7 @@ namespace UserProfile.UI
 
         public void StartEditing()
         {
-            //AudioManager.Instance.ClickButtonSound();
+            AudioManager.Instance.ButtonClickSound();
             string panelName = "[SelectPicturePanel]";
             
             SelectPicturePanel panel = Resources.Load<SelectPicturePanel>(panelName);

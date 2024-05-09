@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7074958445083201190}
   - component: {fileID: 7074958445083201189}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: MusicToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 7074958445636761371}
   - component: {fileID: 7074958445636761370}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: SoundToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,9 +1197,11 @@ MonoBehaviour:
   Canvas: {fileID: 7074958445812263392}
   Content: {fileID: 7074958446732402333}
   IsOpenSound: 1
-  backButton: {fileID: 7074958444897573349}
-  privacyButon: {fileID: 7074958445565136263}
+  privacyPolicyButton: {fileID: 7074958445565136263}
   termsOfUseButton: {fileID: 7074958445163515822}
+  backButton: {fileID: 7074958444897573349}
+  musicToggle: {fileID: 7074958445083201189}
+  soundToggle: {fileID: 7074958445636761370}
 --- !u!1 &7074958445879807734
 GameObject:
   m_ObjectHideFlags: 0

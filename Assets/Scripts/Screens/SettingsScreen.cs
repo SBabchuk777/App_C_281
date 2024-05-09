@@ -8,42 +8,69 @@ namespace Screens
 {
     public class SettingsScreen : BaseScreen
     {
-        [SerializeField] private Button backButton;
-        [SerializeField] private Button privacyButon;
+        [SerializeField] private Button privacyPolicyButton;
         [SerializeField] private Button termsOfUseButton;
+
+        [SerializeField] private Button backButton;
+
+        [SerializeField] private Toggle musicToggle;
+        [SerializeField] private Toggle soundToggle;
 
         private void Awake()
         {
-            backButton.onClick.AddListener(OnOpenStartScreen);
-            privacyButon.onClick.AddListener(OnPrivacyClick);
-            termsOfUseButton.onClick.AddListener(OnTermsOfUseClick);
+            privacyPolicyButton.onClick.AddListener(PrivacyPolicy);
+            termsOfUseButton.onClick.AddListener(TermsUse);
+            backButton.onClick.AddListener(OpenStartScreen);
         }
 
-        private void OnPrivacyClick()
+        private void Start()
         {
+            musicToggle.isOn = AudioManager.Instance.GetActivityMusic();
+            soundToggle.isOn = AudioManager.Instance.GetActivitySound();
 
+            musicToggle.onValueChanged.AddListener(OnMusicToggleChange);
+            soundToggle.onValueChanged.AddListener(OnSoundToggleChange);
         }
 
-        private void OnTermsOfUseClick()
+        public void OnMusicToggleChange(bool isON)
         {
-
+            AudioManager.Instance.ButtonClickSound();
+            AudioManager.Instance.SetMusic(isON);
         }
 
-        private void OnOpenStartScreen()
+        public void OnSoundToggleChange(bool isON)
+        {
+            AudioManager.Instance.ButtonClickSound();
+            AudioManager.Instance.SetSound(isON);
+        }
+
+        private void PrivacyPolicy()
+        {
+            AudioManager.Instance.ButtonClickSound();
+        }
+        private void TermsUse()
+        {
+            AudioManager.Instance.ButtonClickSound();
+        }
+
+        private void OpenStartScreen()
         {
             CloseScreen();
-
             UIManager.Instance.OpenScreen<StartScreen>();
         }
 
-        public override void OpenScreen()
-        {
-            base.OpenScreen();
-        }
 
         public override void CloseScreen()
         {
             base.CloseScreen();
+        }
+
+        public override void OpenScreen()
+        {
+            musicToggle.isOn = AudioManager.Instance.GetActivityMusic();
+            soundToggle.isOn = AudioManager.Instance.GetActivitySound();
+
+            base.OpenScreen();
         }
     }
 }
