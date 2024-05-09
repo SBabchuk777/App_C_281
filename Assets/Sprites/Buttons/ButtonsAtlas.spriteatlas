@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ButtonsAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 43418e03af4e14517ba55e28348bf078, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1f45039094051447db8b1e05bfdd7d07, type: 3}
+  - {fileID: 21300000, guid: 950f19d0c6bd14950bef77ed94e2814e, type: 3}
+  - {fileID: 21300000, guid: 7c52ab1313603447e8f6b0ed25d4e7e1, type: 3}
+  - {fileID: 21300000, guid: 4972a5f35880442259a2e90f07cb6323, type: 3}
+  - {fileID: 21300000, guid: c3b21cb4a1d7c487f9fc3d36eab1752e, type: 3}
+  - {fileID: 21300000, guid: 4bfe66c418a1d4b8d81f2cf5055866c5, type: 3}
+  - {fileID: 21300000, guid: 50f7d5e40be4f45839a8ba94b80ca4e1, type: 3}
+  - {fileID: 21300000, guid: 7c8afec5e6c364620a7886ec1fdc3903, type: 3}
+  - {fileID: 21300000, guid: 3edb0c261d6ab4fa6b5132b2b5bea5d1, type: 3}
+  - {fileID: 21300000, guid: 04bcf597425a24150a863eedd0a2bc62, type: 3}
+  - {fileID: 21300000, guid: 727fed28801f444d79f4dcb3bcc4685f, type: 3}
+  - {fileID: 21300000, guid: 95fc10791aac844ed94678c1282dd127, type: 3}
+  - {fileID: 21300000, guid: 43874a9bbc76043589d1b5480487bd44, type: 3}
+  - {fileID: 21300000, guid: e371d17c34a794194852c40ae9aaf55a, type: 3}
+  - {fileID: 21300000, guid: 62e2434d28a564c1a9d70273d08eb0bc, type: 3}
+  - {fileID: 21300000, guid: f44d8a6df60644c95b5611bdd39c2275, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Button Yes - Enabled
+  - Button No - Enabled
+  - Button Again - Pressed
+  - Button Restart - Enabled
+  - button Start - Enabled
+  - Button Next - Enabled
+  - Button No - Pressed
+  - Button Again - Enabled
+  - Button Play - Enabled
+  - Button Play - Pressed
+  - Button Yes - Enabled-1
+  - Button Restart - Pressed
+  - Button Exit - Pressed
+  - Button Next - Pressed
+  - button Start - Pressed
+  - Button Exit - Enabled
+  m_RenderDataMap: {}
+  m_Tag: ButtonsAtlas
+  m_IsVariant: 0

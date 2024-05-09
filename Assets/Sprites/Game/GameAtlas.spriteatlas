@@ -44,89 +44,40 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 7c8afec5e6c364620a7886ec1fdc3903, type: 3}
-    - {fileID: 2800000, guid: 7c52ab1313603447e8f6b0ed25d4e7e1, type: 3}
-    - {fileID: 2800000, guid: f44d8a6df60644c95b5611bdd39c2275, type: 3}
-    - {fileID: 2800000, guid: 43874a9bbc76043589d1b5480487bd44, type: 3}
-    - {fileID: 2800000, guid: 4bfe66c418a1d4b8d81f2cf5055866c5, type: 3}
-    - {fileID: 2800000, guid: e371d17c34a794194852c40ae9aaf55a, type: 3}
-    - {fileID: 2800000, guid: 950f19d0c6bd14950bef77ed94e2814e, type: 3}
-    - {fileID: 2800000, guid: 50f7d5e40be4f45839a8ba94b80ca4e1, type: 3}
-    - {fileID: 2800000, guid: 3edb0c261d6ab4fa6b5132b2b5bea5d1, type: 3}
-    - {fileID: 2800000, guid: 04bcf597425a24150a863eedd0a2bc62, type: 3}
-    - {fileID: 2800000, guid: 4972a5f35880442259a2e90f07cb6323, type: 3}
-    - {fileID: 2800000, guid: 95fc10791aac844ed94678c1282dd127, type: 3}
-    - {fileID: 2800000, guid: c3b21cb4a1d7c487f9fc3d36eab1752e, type: 3}
-    - {fileID: 2800000, guid: 62e2434d28a564c1a9d70273d08eb0bc, type: 3}
-    - {fileID: 2800000, guid: 727fed28801f444d79f4dcb3bcc4685f, type: 3}
-    - {fileID: 2800000, guid: 1f45039094051447db8b1e05bfdd7d07, type: 3}
-    - {fileID: 2800000, guid: ab8f20e70a845432fb05536b9c3c9efe, type: 3}
-    - {fileID: 2800000, guid: ef256740d389c43419db8b8e51d1da55, type: 3}
-    - {fileID: 2800000, guid: a8294a17e5d57405482d297f8c16426d, type: 3}
-    - {fileID: 2800000, guid: e675067f189c34bf6a15b2c4ecfb8a04, type: 3}
-    - {fileID: 2800000, guid: 4a9e11ea337c948a78de9dd17403ea78, type: 3}
-    - {fileID: 2800000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
-    - {fileID: 2800000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
-    - {fileID: 2800000, guid: 7d9446d6ad3ff4fb28f40e0a532c9e8a, type: 3}
-    - {fileID: 2800000, guid: c3966e2fc052f4b29a047a2beccc7a81, type: 3}
-    - {fileID: 2800000, guid: 306e23e732224471fb553e706cd49358, type: 3}
+    - {fileID: 102900000, guid: ffd5bb449aa374aafa19c1d9456a4f6b, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: ef256740d389c43419db8b8e51d1da55, type: 3}
-  - {fileID: 21300000, guid: 1f45039094051447db8b1e05bfdd7d07, type: 3}
-  - {fileID: 21300000, guid: 950f19d0c6bd14950bef77ed94e2814e, type: 3}
-  - {fileID: 21300000, guid: 7c52ab1313603447e8f6b0ed25d4e7e1, type: 3}
-  - {fileID: 21300000, guid: 4972a5f35880442259a2e90f07cb6323, type: 3}
-  - {fileID: 21300000, guid: c3b21cb4a1d7c487f9fc3d36eab1752e, type: 3}
-  - {fileID: 21300000, guid: 4bfe66c418a1d4b8d81f2cf5055866c5, type: 3}
-  - {fileID: 21300000, guid: 50f7d5e40be4f45839a8ba94b80ca4e1, type: 3}
-  - {fileID: 21300000, guid: 7c8afec5e6c364620a7886ec1fdc3903, type: 3}
-  - {fileID: 21300000, guid: 3edb0c261d6ab4fa6b5132b2b5bea5d1, type: 3}
-  - {fileID: 21300000, guid: 7d9446d6ad3ff4fb28f40e0a532c9e8a, type: 3}
+  - {fileID: 21300000, guid: f2c46fa02a48042cf83ed8e7afc5c016, type: 3}
+  - {fileID: 21300000, guid: f230f4e11ba08467692478974e011582, type: 3}
+  - {fileID: 21300000, guid: 9f8c21247bd7445efbaee0fc35ece230, type: 3}
+  - {fileID: 21300000, guid: 8ad8e174686f048ecb857021fa10d2f2, type: 3}
   - {fileID: 21300000, guid: a8294a17e5d57405482d297f8c16426d, type: 3}
-  - {fileID: 21300000, guid: 04bcf597425a24150a863eedd0a2bc62, type: 3}
   - {fileID: 21300000, guid: ab8f20e70a845432fb05536b9c3c9efe, type: 3}
-  - {fileID: 21300000, guid: 306e23e732224471fb553e706cd49358, type: 3}
-  - {fileID: 21300000, guid: 727fed28801f444d79f4dcb3bcc4685f, type: 3}
-  - {fileID: 21300000, guid: 95fc10791aac844ed94678c1282dd127, type: 3}
+  - {fileID: 21300000, guid: 7f1c11794ee28440ab191be92c2401b7, type: 3}
+  - {fileID: 21300000, guid: 467e42d979eaa45f6b1183a339eb69cf, type: 3}
   - {fileID: 21300000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
   - {fileID: 21300000, guid: 4a9e11ea337c948a78de9dd17403ea78, type: 3}
   - {fileID: 21300000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
-  - {fileID: 21300000, guid: 43874a9bbc76043589d1b5480487bd44, type: 3}
-  - {fileID: 21300000, guid: e371d17c34a794194852c40ae9aaf55a, type: 3}
-  - {fileID: 21300000, guid: 62e2434d28a564c1a9d70273d08eb0bc, type: 3}
-  - {fileID: 21300000, guid: f44d8a6df60644c95b5611bdd39c2275, type: 3}
-  - {fileID: 21300000, guid: c3966e2fc052f4b29a047a2beccc7a81, type: 3}
+  - {fileID: 21300000, guid: 5a04ad3d846b6478abe7d6bf5a15b66c, type: 3}
   - {fileID: 21300000, guid: e675067f189c34bf6a15b2c4ecfb8a04, type: 3}
   m_PackedSpriteNamesToIndex:
   - icon
-  - Button Yes - Enabled
-  - Button No - Enabled
-  - Button Again - Pressed
-  - Button Restart - Enabled
-  - button Start - Enabled
-  - Button Next - Enabled
-  - Button No - Pressed
-  - Button Again - Enabled
-  - Button Play - Enabled
-  - serpantin 1
+  - Puzzel default
+  - Body start level
+  - Body game
+  - Body Result
   - Menu
-  - Button Play - Pressed
   - coin
-  - serpantin 3
-  - Button Yes - Enabled-1
-  - Button Restart - Pressed
+  - confetti
+  - Puzzel default 4x4
   - Vector
   - Paused
   - x
-  - Button Exit - Pressed
-  - Button Next - Pressed
-  - button Start - Pressed
-  - Button Exit - Enabled
-  - serpantin 2
+  - Body exit
   - Panel
   m_RenderDataMap: {}
   m_Tag: GameAtlas
