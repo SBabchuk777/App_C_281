@@ -160,6 +160,7 @@ namespace Screens
 
                 if (loseScreen != null)
                 {
+                    AudioManager.Instance.LoseGameSound();
                     loseScreen.SetupPanel(false);
                     loseScreen.OpenScreen();
                 }

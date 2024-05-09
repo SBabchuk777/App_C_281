@@ -15,6 +15,7 @@ namespace Managers
 
         [SerializeField] private AudioSource buttonClick;
         [SerializeField] private AudioSource winGame;
+        [SerializeField] private AudioSource loseGame;
         [SerializeField] private AudioSource scrollSlot;
         [SerializeField] private AudioSource loseSlot;
         [SerializeField] private AudioSource winSlot;
@@ -57,6 +58,8 @@ namespace Managers
         public void LoseSlotSound() => loseSlot.Play();
 
         public void WinGameSound() => winGame.Play();
+
+        public void LoseGameSound() => loseGame.Play();
 
         public void ScrollSlotSound() => scrollSlot.Play();
 

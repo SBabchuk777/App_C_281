@@ -93,11 +93,11 @@ namespace Screens
                 {
                     
                     IsJackPotChecked = true;
-                   // AudioManager.Instance.WinSlotSound();
+                    AudioManager.Instance.WinSlotSound();
                 }
                 else
                 {
-                   // AudioManager.Instance.LoseSlotSound();
+                    AudioManager.Instance.LoseSlotSound();
                 }
             }
 
@@ -111,13 +111,12 @@ namespace Screens
         private void StartGameSpin()
         {
             GameSaves.Instance.ClaimReward(true);
-            //AudioManager.Instance.ScrollSlotSound();
 
             SetCancelButtonNegative(false);  
 
             if (!isSpin)
             {
-                AudioManager.Instance.ButtonClickSound();
+                AudioManager.Instance.ScrollSlotSound();
 
                 for (int i = 0; i < slotViews.Count; i++)
                 {
