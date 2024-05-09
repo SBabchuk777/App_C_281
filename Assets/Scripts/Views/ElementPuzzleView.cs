@@ -91,6 +91,7 @@ namespace Views
 
                 if (distance > 0.6)
                 {
+                    AudioManager.Instance.ErrorPutCardSound();
                     isDrag = true;
                     transform.position = _startPos;
                 }
@@ -98,6 +99,7 @@ namespace Views
                 {
                     if(_elementIndex == nearestCell.ElementPuzzleIndex)
                     {
+                        AudioManager.Instance.PutCardSound();
                         transform.position = nearestCell.transform.position;
                         isDrag = false;
 
@@ -110,8 +112,9 @@ namespace Views
                     {
                         isDrag = true;
                         transform.position = _startPos;
+                        AudioManager.Instance.ErrorPutCardSound();
 
-                        if(gameScreen != null)
+                        if (gameScreen != null)
                         {
                             gameScreen.SpendAttemp();
                         }

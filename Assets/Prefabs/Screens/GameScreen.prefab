@@ -918,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 7081709038702485588}
   Content: {fileID: 7081709040023228092}
-  IsOpenSound: 0
+  IsOpenSound: 1
   grid3x3: {fileID: 7081709038610552886}
   grid4x4: {fileID: 7081709039935919019}
   elementParents: {fileID: 6901506879586552709}

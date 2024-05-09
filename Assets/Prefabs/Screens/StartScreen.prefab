@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1250167685036749100}
   Content: {fileID: 1250167684075369071}
-  IsOpenSound: 0
+  IsOpenSound: 1
   startGameButton: {fileID: 1250167685735590552}
   dailyBonusButton: {fileID: 1250167685494370387}
   settingsButton: {fileID: 1250167684249003925}

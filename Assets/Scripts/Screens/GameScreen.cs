@@ -156,12 +156,12 @@ namespace Screens
 
             if (_wrongSpendCount == 1)
             {
-                var winScreen = UIManager.Instance.GetScreen<WinOrLosePopup>();
+                var loseScreen = UIManager.Instance.GetScreen<WinOrLosePopup>();
 
-                if (winScreen != null)
+                if (loseScreen != null)
                 {
-                    winScreen.SetupPanel(false);
-                    winScreen.OpenScreen();
+                    loseScreen.SetupPanel(false);
+                    loseScreen.OpenScreen();
                 }
 
                 return;
@@ -184,6 +184,7 @@ namespace Screens
 
                 if (winScreen != null)
                 {
+                    AudioManager.Instance.WinGameSound();
                     winScreen.SetupPanel(true);
                     winScreen.OpenScreen();
                 }

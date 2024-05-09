@@ -14,8 +14,8 @@ namespace Screens
 
         public virtual void OpenScreen()
         {
-            //if (UIManager.Instance.IsSetup && IsOpenSound)
-            //    AudioManager.Instance.ButtonClickSound();
+            if (UIManager.Instance.IsSetup && IsOpenSound)
+                AudioManager.Instance.ButtonClickSound();
 
             if (Content)
                 Content.gameObject.SetActive(true);
@@ -23,8 +23,8 @@ namespace Screens
 
         public virtual void CloseScreen()
         {
-            //if (UIManager.Instance.IsSetup && IsOpenSound)
-            //    AudioManager.Instance.ButtonClickSound();
+            if (UIManager.Instance.IsSetup && IsOpenSound)
+                AudioManager.Instance.ButtonClickSound();
 
             if (Canvas && Content)
                 Content.gameObject.SetActive(false);

@@ -1259,7 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 5874790413834949439}
   Content: {fileID: 5874790414310079314}
-  IsOpenSound: 0
+  IsOpenSound: 1
   slotViews:
   - {fileID: 7904416220992054909}
   - {fileID: 6251030980119789720}

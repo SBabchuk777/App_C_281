@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1777122921502888150}
   Content: {fileID: 1777122921911873467}
-  IsOpenSound: 0
+  IsOpenSound: 1
   playButton: {fileID: 1777122922602254787}
   restartButton: {fileID: 1777122922362826487}
   exitButton: {fileID: 1777122921218790268}

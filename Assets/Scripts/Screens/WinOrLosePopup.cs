@@ -30,6 +30,7 @@ namespace Screens
 
         private void OnNextLevelClick()
         {
+            AudioManager.Instance.ButtonClickSound();
             CloseScreen();
             NextLevelAction?.Invoke();
         }
@@ -37,6 +38,7 @@ namespace Screens
 
         private void OnRestartLevelClick()
         {
+            AudioManager.Instance.ButtonClickSound();
             CloseScreen();
             NextLevelAction?.Invoke();
         }
@@ -44,6 +46,7 @@ namespace Screens
 
         private void OnOpenStartScreenClick()
         {
+            AudioManager.Instance.ButtonClickSound();
             CloseScreen();
             OpenStartScreenAction?.Invoke();
             UIManager.Instance.OpenScreen<StartScreen>();

@@ -117,6 +117,8 @@ namespace Screens
 
             if (!isSpin)
             {
+                AudioManager.Instance.ButtonClickSound();
+
                 for (int i = 0; i < slotViews.Count; i++)
                 {
                     slotViews[i].StartSpin();
@@ -126,6 +128,7 @@ namespace Screens
             }
             else if(isSpin && IsJackPotChecked)
             {
+                AudioManager.Instance.ClaimRewardSound();
                 IsJackPotChecked = false;
                 GameSaves.Instance.AddStarCoin(_coinJackPot);
                 SetButtons();
@@ -133,6 +136,7 @@ namespace Screens
             }
             else if (isSpin && !IsJackPotChecked)
             {
+                AudioManager.Instance.ButtonClickSound();
                 OnOpenStartScreen();
                 SetButtons();
             }

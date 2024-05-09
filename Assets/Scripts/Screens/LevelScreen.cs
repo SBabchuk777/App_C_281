@@ -23,6 +23,7 @@ namespace Screens
 
         private void StartGame()
         {
+            AudioManager.Instance.ButtonClickSound();
             var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
             if(gameScreen != null)

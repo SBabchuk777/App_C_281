@@ -18,9 +18,9 @@ namespace Managers
         [SerializeField] private AudioSource scrollSlot;
         [SerializeField] private AudioSource loseSlot;
         [SerializeField] private AudioSource winSlot;
-        [SerializeField] private AudioSource ballSound;
-        [SerializeField] private AudioSource ballWin;
-        [SerializeField] private AudioSource betSound;
+        [SerializeField] private AudioSource putCard;
+        [SerializeField] private AudioSource errorCard;
+        [SerializeField] private AudioSource claimReward;
 
         private string _soundKey = "_Sound_Key";
         private string _musicKey = "_Music_Key";
@@ -46,9 +46,9 @@ namespace Managers
             SetSound(GetActivitySound());
         }
 
-        public void BallWinSound() => ballWin.Play();
+        public void PutCardSound() => putCard.Play();
 
-        public void BallSound() => ballSound.Play();
+        public void ErrorPutCardSound() => errorCard.Play();
 
         public void ButtonClickSound() => buttonClick.Play();
 
@@ -60,7 +60,7 @@ namespace Managers
 
         public void ScrollSlotSound() => scrollSlot.Play();
 
-        public void BetSound() => betSound.Play();
+        public void ClaimRewardSound() => claimReward.Play();
 
         public void GameMusicPlay(bool playMusic)
         {

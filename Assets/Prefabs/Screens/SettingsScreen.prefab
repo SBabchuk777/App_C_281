@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 7074958445812263392}
   Content: {fileID: 7074958446732402333}
-  IsOpenSound: 0
+  IsOpenSound: 1
   backButton: {fileID: 7074958444897573349}
   privacyButon: {fileID: 7074958445565136263}
   termsOfUseButton: {fileID: 7074958445163515822}

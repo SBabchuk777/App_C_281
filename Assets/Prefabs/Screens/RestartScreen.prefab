@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 4322407537621433625}
   Content: {fileID: 4322407538646123962}
-  IsOpenSound: 0
+  IsOpenSound: 1
   yesButton: {fileID: 4322407537391721998}
   noButton: {fileID: 4322407538471562162}
 --- !u!1 &4322407538088222480
