@@ -12,6 +12,7 @@ namespace Saves
         private const string StartCoinKey = "_Star_Coin_Key";
         private const string UpdateRewardTimeKey = "_Update_Reward_Time_Key";
         private const string ClaimedRewardKey = "_Claimed_Reward_Key";
+        private const string ShowTutorialKey = "_Show_Tutorial_Key";
 
         private int LevelIndex;
         private int StarCoin;
@@ -29,6 +30,19 @@ namespace Saves
                     _instance = new GameSaves();
                 }
                 return _instance;
+            }
+        }
+
+        public bool ShowTutorial()
+        {
+            if (!PlayerPrefs.HasKey(ShowTutorialKey))
+            {
+                WriteData<bool>(ShowTutorialKey, true);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

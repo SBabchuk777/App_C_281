@@ -10,6 +10,8 @@ namespace Views
 {
     public class ElementPuzzleView : MonoBehaviour, IBeginDragHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler,IEndDragHandler
     {
+        public int ElementIndex => _elementIndex;
+
         [SerializeField] private RectTransform rectElement;
         [SerializeField] private Image elementImage;
 
