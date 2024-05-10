@@ -18,7 +18,7 @@ namespace Screens
 
         [SerializeField] private Button bonusButton;
 
-        [Header("Text")]
+        [Header("TextRects")]
         [SerializeField] private RectTransform firstText;
         [SerializeField] private RectTransform loseText;
         [SerializeField] private RectTransform winText;
@@ -28,7 +28,7 @@ namespace Screens
         [SerializeField] private Sprite menuSprite;
         [SerializeField] private Sprite spinSprite;
 
-        public  bool IsJackPotChecked = false;
+        public  bool isJackPotChecked = false;
         private bool isSpin = false;
 
         private int _coinJackPot = 100;    
@@ -85,14 +85,13 @@ namespace Screens
 
         private async void OnCheckJackPot()
         {
-            if (!IsJackPotChecked)
+            if (!isJackPotChecked)
             {
                 var key = slotViews[0].SpinImage.sprite.name;
 
                 if (slotViews.All(slot => slot.SpinImage.sprite.name == key))
                 {
-                    
-                    IsJackPotChecked = true;
+                    isJackPotChecked = true;
                     AudioManager.Instance.WinSlotSound();
                 }
                 else
@@ -104,7 +103,7 @@ namespace Screens
             await Task.Delay(700);
 
             SetCancelButtonNegative(true);
-            SetTextJackpot(IsJackPotChecked);
+            SetTextJackpot(isJackPotChecked);
             SetButtons();
         }
 
@@ -116,29 +115,44 @@ namespace Screens
 
             if (!isSpin)
             {
-                AudioManager.Instance.ScrollSlotSound();
-
-                for (int i = 0; i < slotViews.Count; i++)
-                {
-                    slotViews[i].StartSpin();
-                }
-
-                isSpin = true;
+                StartSpin();
             }
-            else if(isSpin && IsJackPotChecked)
+            else if(isSpin && isJackPotChecked)
             {
-                AudioManager.Instance.ClaimRewardSound();
-                IsJackPotChecked = false;
-                GameSaves.Instance.AddStarCoin(_coinJackPot);
-                SetButtons();
-                SetCancelButtonNegative(true);
+                ClaimReward();
             }
-            else if (isSpin && !IsJackPotChecked)
+            else if (isSpin && !isJackPotChecked)
             {
-                AudioManager.Instance.ButtonClickSound();
-                OnOpenStartScreen();
-                SetButtons();
+                GoToMenu();
             }
+        }
+
+        public void StartSpin()
+        {
+            AudioManager.Instance.ScrollSlotSound();
+
+            for (int i = 0; i < slotViews.Count; i++)
+            {
+                slotViews[i].StartSpin();
+            }
+
+            isSpin = true;
+        }
+
+        public void ClaimReward()
+        {
+            AudioManager.Instance.ClaimRewardSound();
+            isJackPotChecked = false;
+            GameSaves.Instance.AddStarCoin(_coinJackPot);
+            SetButtons();
+            SetCancelButtonNegative(true);
+        }
+
+        public void GoToMenu()
+        {
+            AudioManager.Instance.ButtonClickSound();
+            OnOpenStartScreen();
+            SetButtons();
         }
 
         public void SetButtons()
@@ -147,9 +161,9 @@ namespace Screens
             {
                 bonusButton.image.sprite = spinSprite;
             }
-            else if (isSpin && IsJackPotChecked)
+            else if (isSpin && isJackPotChecked)
                 bonusButton.image.sprite = claimRewardSprite;
-            else if (isSpin && !IsJackPotChecked)
+            else if (isSpin && !isJackPotChecked)
             {
                 bonusButton.image.sprite = menuSprite;
             }
@@ -182,7 +196,7 @@ namespace Screens
         public override void CloseScreen()
         {
             SetCancelButtonNegative(true);
-            IsJackPotChecked = false;
+            isJackPotChecked = false;
             isSpin = false;
             base.CloseScreen();
         }

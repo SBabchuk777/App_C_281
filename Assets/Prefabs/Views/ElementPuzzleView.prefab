@@ -91,3 +91,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rectElement: {fileID: 4489510737144087816}
   elementImage: {fileID: 4489510737144087814}
+  maxDistance: 0.6

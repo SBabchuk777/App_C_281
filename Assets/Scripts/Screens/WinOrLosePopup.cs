@@ -10,9 +10,11 @@ namespace Screens
         public static Action NextLevelAction;
         public static Action OpenStartScreenAction;
 
+        [Header("RectPanels")]
         [SerializeField] private RectTransform winPanel;
         [SerializeField] private RectTransform losePanel;
 
+        [Header("Buttons")]
         [SerializeField] private Button nextLevel;
         [SerializeField] private Button restartLevel;
         [SerializeField] private Button homeLose;
@@ -33,14 +35,12 @@ namespace Screens
             NextLevelAction?.Invoke();
         }
 
-
         private void OnRestartLevelClick()
         {
             AudioManager.Instance.ButtonClickSound();
             CloseScreen();
             NextLevelAction?.Invoke();
         }
-
 
         private void OnOpenStartScreenClick()
         {
@@ -55,7 +55,6 @@ namespace Screens
             winPanel.gameObject.SetActive(win);
             losePanel.gameObject.SetActive(!win);
         }
-
 
         public override void CloseScreen()
         {

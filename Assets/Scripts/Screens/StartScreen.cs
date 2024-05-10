@@ -7,6 +7,7 @@ namespace Screens
 {
     public class StartScreen : BaseScreen
     {
+        [Header("Buttons")]
         [SerializeField] private Button startGameButton;
         [SerializeField] private Button dailyBonusButton;
         [SerializeField] private Button settingsButton;

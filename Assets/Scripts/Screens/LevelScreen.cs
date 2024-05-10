@@ -14,6 +14,8 @@ namespace Screens
         [SerializeField] private Button startButton;
         [SerializeField] private TMP_Text levelText;
 
+        private const string _levelText = "Level "; 
+
         private void Awake()
         {
             startButton.onClick.AddListener(StartGame);
@@ -37,7 +39,7 @@ namespace Screens
             GameSaves.Instance.SetLevel();
 
             levelImage.sprite = levelsConfig.Levels[GameSaves.Instance.GetLevel()].LevelSprite;
-            levelText.text = "Level " + (GameSaves.Instance.GetLevel() + 1).ToString();
+            levelText.text = _levelText + (GameSaves.Instance.GetLevel() + 1).ToString();
 
             base.OpenScreen();
         }

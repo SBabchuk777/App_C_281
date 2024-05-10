@@ -34,11 +34,6 @@ namespace Screens
             UIManager.Instance.OpenScreen<ExitScreen>();
         }
 
-        public override void OpenScreen()
-        {
-            base.OpenScreen();
-        }
-
         public override void CloseScreen()
         {
             base.CloseScreen();

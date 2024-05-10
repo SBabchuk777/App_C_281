@@ -12,6 +12,7 @@ namespace Views
 
         [SerializeField] private RectTransform rectElement;
         [SerializeField] private Image elementImage;
+        [SerializeField] private float maxDistance;
 
         private Vector3 _mousePositionOffest;
         private Vector3 _startPos;
@@ -40,7 +41,7 @@ namespace Views
                 _gridLayoutGroup = gameScreen.GridLayout;
                 _gridSize = _gridLayoutGroup.cellSize;
 
-                rectElement.sizeDelta = _gridSize; //- new Vector2(2.5f,2.5f);
+                rectElement.sizeDelta = _gridSize;
             }
         }
 
@@ -87,7 +88,7 @@ namespace Views
 
                 float distance = Vector2.Distance(transform.position, nearestCell.transform.position);
 
-                if (distance > 0.6)
+                if (distance > maxDistance)
                 {
                     AudioManager.Instance.ErrorPutCardSound();
                     isDrag = true;
