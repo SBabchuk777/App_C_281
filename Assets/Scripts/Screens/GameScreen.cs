@@ -25,18 +25,11 @@ namespace Screens
         [Header("Parents")]
         [SerializeField] private RectTransform elementParents;
         [SerializeField] private RectTransform wrongsParents;
+        [SerializeField] private RectTransform allElementsParent;
 
         [Header("UI")]
         [SerializeField] private Button pauseButton;
         [SerializeField] private TMP_Text levelText;
-
-        [Header("Tutorial")]
-        [SerializeField] private Image backTutorial;
-        [SerializeField] private Image handTutorial;
-        [SerializeField] private Image blockClickBackground;
-        [SerializeField] private Vector3 offestHands;
-        [SerializeField] private float animationTime;
-        [SerializeField] private float fadeTime;
 
         private GridLayoutGroup _gridLayout;
 
@@ -61,6 +54,7 @@ namespace Screens
             ExitScreen.ExitGameAction += OnExitGame;
             WinOrLosePopup.NextLevelAction += OnNextLevel;
             WinOrLosePopup.OpenStartScreenAction += OnExitGame;
+            TutorialScreen.CloseTutorial += ActivityAllElements;
         }
 
         private void OnDestroy()
@@ -69,6 +63,7 @@ namespace Screens
             ExitScreen.ExitGameAction -= OnExitGame;
             WinOrLosePopup.NextLevelAction -= OnNextLevel;
             WinOrLosePopup.OpenStartScreenAction += OnExitGame;
+            TutorialScreen.CloseTutorial -= ActivityAllElements;
         }
 
         public void SetupLevel()
@@ -90,56 +85,6 @@ namespace Screens
             SetupGridViews(currentLevel);
             SetupElemets(currentLevel);
             SetupAvailableWrongs();
-
-            ShowTutorial();
-        }
-
-        public async void ShowTutorial()
-        {
-            if (GameSaves.Instance.ShowTutorial())
-            {
-                ActiveTutorialObjects(true);
-                await Task.Delay(500);
-
-                var firstCard = _elementPuzzleViews.FirstOrDefault();
-
-                var cardPosition = firstCard.transform.position;
-
-                var cardTarget = _gridViews.FirstOrDefault(item => item.ElementPuzzleIndex == firstCard.ElementIndex);
-
-                handTutorial.transform.DOMove(firstCard.transform.position + offestHands, 0);
-                
-                handTutorial.DOFade(1, fadeTime).OnComplete(() =>
-                {
-                    firstCard.transform.SetAsLastSibling();
-                    handTutorial.transform.DOMove(cardTarget.transform.position + offestHands, animationTime);
-                    firstCard.transform.DOMove(cardTarget.transform.position, animationTime).OnComplete(() =>
-                    {
-                        CallbackTutorial(firstCard, cardPosition);
-                    });
-                });         
-                
-            }
-        }
-
-        public async void CallbackTutorial(ElementPuzzleView elementPuzzleView, Vector3 position)
-        {
-            await Task.Delay(300);
-
-            elementPuzzleView.transform.position = position;
-
-            backTutorial.DOFade(0,fadeTime);
-            handTutorial.DOFade(0, fadeTime).OnComplete(() =>
-            {
-                ActiveTutorialObjects(false);
-            });
-        }
-
-        public void ActiveTutorialObjects(bool active)
-        {
-            backTutorial.gameObject.SetActive(active);
-            handTutorial.gameObject.SetActive(active);
-            blockClickBackground.gameObject.SetActive(active);
         }
 
         public void SpendAttemp()
@@ -204,6 +149,11 @@ namespace Screens
             }
 
             return nearestCell;
+        }
+
+        public void ActivityAllElements(bool active)
+        {
+            allElementsParent.gameObject.SetActive(active);
         }
 
         public void SetGrid(bool active)

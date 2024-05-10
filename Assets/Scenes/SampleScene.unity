@@ -1725,6 +1725,7 @@ MonoBehaviour:
   - {fileID: 4322407537621433626, guid: ca3f6b697cabb40c1915dcb4761ad6ec, type: 3}
   - {fileID: 7074958445812263399, guid: 82fdeb7d6b5654966b701c411f52ad2c, type: 3}
   - {fileID: 5874790413834949438, guid: 4cd9797e29f884b6bb36c943bd2218f1, type: 3}
+  - {fileID: 7103293957857811657, guid: c88b9151442e14ba8a2748f9853b71a1, type: 3}
   screens: []
   camera: {fileID: 519420031}
   IsSetup: 0

@@ -36,7 +36,7 @@ namespace Views
         {
             var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
-            if (gameScreen != null)
+            if (gameScreen != null && gameScreen.GridLayout != null)
             {
                 _gridLayoutGroup = gameScreen.GridLayout;
                 _gridSize = _gridLayoutGroup.cellSize;

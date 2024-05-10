@@ -23,11 +23,31 @@ namespace Screens
         private void StartGame()
         {
             AudioManager.Instance.ButtonClickSound();
+
             var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
-            if(gameScreen != null)
+            if (GameSaves.Instance.ShowTutorial())
             {
-                gameScreen.SetupLevel();
+                var tutorialScreen = UIManager.Instance.GetScreen<TutorialScreen>();
+
+                if (tutorialScreen != null)
+                {
+                    tutorialScreen.OpenScreen();
+                    tutorialScreen.ShowTutorial();
+                }
+
+                if (gameScreen != null)
+                {
+                    gameScreen.SetupLevel();
+                    gameScreen.ActivityAllElements(false);
+                }
+            }
+            else
+            {
+                if (gameScreen != null)
+                {
+                    gameScreen.SetupLevel();
+                }
             }
 
             CloseScreen();
