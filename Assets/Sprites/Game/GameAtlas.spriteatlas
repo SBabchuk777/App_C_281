@@ -62,6 +62,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9022010a84f8d4aa8aaddbffc8819cb0, type: 3}
   - {fileID: 21300000, guid: 4a9e11ea337c948a78de9dd17403ea78, type: 3}
   - {fileID: 21300000, guid: 340467faae5aa45c0906abe028aaf844, type: 3}
+  - {fileID: 21300000, guid: e8a8b65bbdfef4d9d9a84d8697769502, type: 3}
   - {fileID: 21300000, guid: 5a04ad3d846b6478abe7d6bf5a15b66c, type: 3}
   - {fileID: 21300000, guid: e675067f189c34bf6a15b2c4ecfb8a04, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -77,6 +78,7 @@ SpriteAtlas:
   - Vector
   - Paused
   - x
+  - panel balance
   - Body exit
   - Panel
   m_RenderDataMap: {}

@@ -50,10 +50,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 04bcf597425a24150a863eedd0a2bc62, type: 3}
   - {fileID: 21300000, guid: 727fed28801f444d79f4dcb3bcc4685f, type: 3}
   - {fileID: 21300000, guid: 95fc10791aac844ed94678c1282dd127, type: 3}
+  - {fileID: 21300000, guid: 2f35431bb20ee4308aa9a7e087a61b95, type: 3}
   - {fileID: 21300000, guid: 43874a9bbc76043589d1b5480487bd44, type: 3}
   - {fileID: 21300000, guid: e371d17c34a794194852c40ae9aaf55a, type: 3}
   - {fileID: 21300000, guid: 62e2434d28a564c1a9d70273d08eb0bc, type: 3}
   - {fileID: 21300000, guid: f44d8a6df60644c95b5611bdd39c2275, type: 3}
+  - {fileID: 21300000, guid: 4b95642eeafb1486091fdd120f4af7a1, type: 3}
   m_PackedSpriteNamesToIndex:
   - Button Yes - Enabled
   - Button No - Enabled
@@ -67,10 +69,12 @@ SpriteAtlas:
   - Button Play - Pressed
   - Button Yes - Enabled-1
   - Button Restart - Pressed
+  - Button Claim 100 - Enabled
   - Button Exit - Pressed
   - Button Next - Pressed
   - button Start - Pressed
   - Button Exit - Enabled
+  - Button Claim 100 - Pressed
   m_RenderDataMap: {}
   m_Tag: ButtonsAtlas
   m_IsVariant: 0
