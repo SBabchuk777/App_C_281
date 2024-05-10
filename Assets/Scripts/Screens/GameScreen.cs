@@ -26,14 +26,6 @@ namespace Screens
         [SerializeField] private RectTransform elementParents;
         [SerializeField] private RectTransform wrongsParents;
 
-        [Header("Configs")]
-        [SerializeField] private LevelsConfig levelsConfig;
-
-        [Header("Prefabs")]
-        [SerializeField] private ElementPuzzleView puzzleView;
-        [SerializeField] private GridView gridView;
-        [SerializeField] private WrongView wrongView;
-
         [Header("UI")]
         [SerializeField] private Button pauseButton;
         [SerializeField] private TMP_Text levelText;
@@ -53,9 +45,10 @@ namespace Screens
         private List<GridView> _gridViews = new List<GridView>();
         private List<WrongView> _wrongViews = new List<WrongView>();
 
-        private int _countWrongs = 4;
+        private const int _countWrongs = 4;
         private int _wrongSpendCount;
-        private int _rewardCoin = 100;
+
+        [SerializeField] private int _rewardCoin = 100;
 
         private void Awake()
         {
@@ -83,7 +76,7 @@ namespace Screens
             GameSaves.Instance.SetLevel();
 
             UpdateLevelText();
-            var currentLevel = levelsConfig.Levels[GameSaves.Instance.GetLevel()];
+            var currentLevel = PrefabsStorage.Instance.LevelsConfig.Levels[GameSaves.Instance.GetLevel()];
 
             if (currentLevel.CountElements <= 9)
             {
@@ -266,7 +259,7 @@ namespace Screens
         {
             for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
             {
-                var newGridView = Instantiate(gridView, _gridLayout.transform);
+                var newGridView = Instantiate(PrefabsStorage.Instance.GridView, _gridLayout.transform);
                 newGridView.SetupIndex(currentLevel.ElementsPuzzles[i].ElementIndex);
                 _gridViews.Add(newGridView);
             }
@@ -279,7 +272,7 @@ namespace Screens
 
             for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
             {
-                var elementView = Instantiate(puzzleView, elementParents);
+                var elementView = Instantiate(PrefabsStorage.Instance.PuzzleView, elementParents);
                 Vector2 randomPosition = new Vector2(Random.Range(parentMin.x, parentMax.x),
                                                     Random.Range(parentMin.y, parentMax.y));
 
@@ -293,7 +286,7 @@ namespace Screens
         {
             for (int i = 0; i < _countWrongs; i++)
             {
-                var newWrongView = Instantiate(wrongView, wrongsParents);
+                var newWrongView = Instantiate(PrefabsStorage.Instance.WrongView, wrongsParents);
                 _wrongViews.Add(newWrongView);
             }
 

@@ -9,7 +9,6 @@ namespace Screens
 {
     public class LevelScreen : BaseScreen
     {
-        [SerializeField] private LevelsConfig levelsConfig;
         [SerializeField] private Image levelImage;
         [SerializeField] private Button startButton;
         [SerializeField] private TMP_Text levelText;
@@ -38,7 +37,7 @@ namespace Screens
         {
             GameSaves.Instance.SetLevel();
 
-            levelImage.sprite = levelsConfig.Levels[GameSaves.Instance.GetLevel()].LevelSprite;
+            levelImage.sprite = PrefabsStorage.Instance.LevelsConfig.Levels[GameSaves.Instance.GetLevel()].LevelSprite;
             levelText.text = _levelText + (GameSaves.Instance.GetLevel() + 1).ToString();
 
             base.OpenScreen();
