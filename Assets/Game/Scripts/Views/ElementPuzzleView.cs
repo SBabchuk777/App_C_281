@@ -101,13 +101,15 @@ namespace Views
                         AudioManager.Instance.PutCardSound();
                         transform.position = nearestCell.transform.position;
                         isDrag = false;
-
+                        
+                        nearestCell.SetBusy();
+                        
                         if (gameScreen != null)
                         {
                             gameScreen.AddElementForGrid(this);
                         }
                     }
-                    else
+                    else if(!nearestCell.IsBusy) 
                     {
                         isDrag = true;
                         transform.position = _startPos;
@@ -117,6 +119,12 @@ namespace Views
                         {
                             gameScreen.SpendAttemp();
                         }
+                    }
+                    else
+                    {
+                        isDrag = true;
+                        transform.position = _startPos;
+                        AudioManager.Instance.ErrorPutCardSound();
                     }
                    
                 }
