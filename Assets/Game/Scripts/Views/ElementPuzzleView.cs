@@ -3,13 +3,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Managers;
 using Screens;
+using System;
+using Unity.VisualScripting;
 
 namespace Views
 {
     public class ElementPuzzleView : MonoBehaviour, IBeginDragHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler,IEndDragHandler
     {
+        public event Action<ElementPuzzleView,bool> StateDragginAction;
         public int ElementIndex => _elementIndex;
-
+        
         [SerializeField] private RectTransform rectElement;
         [SerializeField] private Image elementImage;
         [SerializeField] private float maxDistance;
@@ -45,6 +48,28 @@ namespace Views
             }
         }
 
+        private void OnDestroy()
+        {
+            UnSubcribe();
+        }
+
+        public void Subcribe()
+        {
+            GameScreen.OnChangeIndex += SetRaycastPuzzle;
+        }
+
+        private void UnSubcribe()
+        {
+            GameScreen.OnChangeIndex -= SetRaycastPuzzle;
+        }
+
+        private void SetRaycastPuzzle(int index)
+        {
+            isDrag = index == _elementIndex || index == -1;
+            
+            elementImage.raycastTarget = index == _elementIndex || index == -1;
+        }
+
         public void OnPointerUp(PointerEventData eventData)
         {
 
@@ -58,6 +83,13 @@ namespace Views
         {
             if (isDrag)
             {
+                var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
+
+                if (gameScreen != null && gameScreen.Content.gameObject.activeSelf)
+                {
+                    gameScreen.SetId(_elementIndex);
+                }
+                
                 _startPos = transform.position;
                 Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
                 Vector3 mousePositionWorldPoint = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -82,6 +114,10 @@ namespace Views
             if (isDrag)
             {
                 var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
+                
+                if(gameScreen !=null)
+                     gameScreen.SetId(-1);
+                
                 Vector3 currentPosition = transform.position;
 
                 GridView nearestCell = FindNearestCellPosition(currentPosition);

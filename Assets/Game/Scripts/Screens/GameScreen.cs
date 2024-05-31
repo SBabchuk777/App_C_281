@@ -6,14 +6,14 @@ using Views;
 using Managers;
 using Saves;
 using TMPro;
-using DG.Tweening;
-using System.Linq;
-using System.Threading.Tasks;
+using System;
 
 namespace Screens
 {
     public class GameScreen : BaseScreen
     {
+        public static event Action<int> OnChangeIndex;
+        
         public GridLayoutGroup GridLayout => _gridLayout;
 
         public List<GridView> GridViews => _gridViews;
@@ -41,6 +41,8 @@ namespace Screens
         private const int _countWrongs = 4;
         private int _wrongSpendCount;
 
+        private ElementPuzzleView dragginElement;
+        
         [SerializeField] private int _rewardCoin = 100;
 
         private void Awake()
@@ -203,6 +205,11 @@ namespace Screens
             base.OpenScreen();
         }
 
+        public void SetId(int id)
+        {
+            OnChangeIndex?.Invoke(id);
+        }
+
         #region SetupViews
 
         public void SetupGridViews(LevelsConfig.Level currentLevel)
@@ -223,10 +230,11 @@ namespace Screens
             for (int i = 0; i < currentLevel.ElementsPuzzles.Count; i++)
             {
                 var elementView = Instantiate(PrefabsStorage.Instance.PuzzleView, elementParents);
-                Vector2 randomPosition = new Vector2(Random.Range(parentMin.x, parentMax.x),
-                                                    Random.Range(parentMin.y, parentMax.y));
+                Vector2 randomPosition = new Vector2(UnityEngine.Random.Range(parentMin.x, parentMax.x),
+                                                        UnityEngine.Random.Range(parentMin.y, parentMax.y));
 
 
+                elementView.Subcribe();
                 elementView.SetupElement(currentLevel.ElementsPuzzles[i].ElementSprite, currentLevel.ElementsPuzzles[i].ElementIndex, randomPosition);
                 _elementPuzzleViews.Add(elementView);
             }
