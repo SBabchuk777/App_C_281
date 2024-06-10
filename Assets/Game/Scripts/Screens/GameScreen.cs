@@ -52,6 +52,8 @@ namespace Screens
 
         private void Start()
         {
+            LevelScreen.OnUpdateLevel += UpdateLevelText;
+            
             RestartScreen.RestartGameAction += OnRestartGame;
             ExitScreen.ExitGameAction += OnExitGame;
             WinOrLosePopup.NextLevelAction += OnNextLevel;
@@ -61,6 +63,8 @@ namespace Screens
 
         private void OnDestroy()
         {
+            LevelScreen.OnUpdateLevel -= UpdateLevelText;
+            
             RestartScreen.RestartGameAction -= OnRestartGame;
             ExitScreen.ExitGameAction -= OnExitGame;
             WinOrLosePopup.NextLevelAction -= OnNextLevel;

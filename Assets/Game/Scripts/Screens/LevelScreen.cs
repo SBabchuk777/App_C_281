@@ -1,5 +1,5 @@
 using UnityEngine;
-using Datas;
+using System;
 using UnityEngine.UI;
 using Saves;
 using Managers;
@@ -9,6 +9,8 @@ namespace Screens
 {
     public class LevelScreen : BaseScreen
     {
+        public static event Action OnUpdateLevel;
+        
         [SerializeField] private Image levelImage;
         [SerializeField] private Button startButton;
         [SerializeField] private TMP_Text levelText;
@@ -61,6 +63,7 @@ namespace Screens
             levelText.text = _levelText + (GameSaves.Instance.GetLevel() + 1).ToString();
 
             base.OpenScreen();
+            OnUpdateLevel?.Invoke();
         }
 
         public override void CloseScreen()

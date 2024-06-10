@@ -80,7 +80,7 @@ namespace Screens
 
         private void SetCancelButtonNegative(bool active)
         {
-            bonusButton.enabled = active;
+            bonusButton.interactable = active;
         }
 
         private async void OnCheckJackPot()

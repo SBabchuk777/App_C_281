@@ -387,7 +387,6 @@ MonoBehaviour:
   Canvas: {fileID: 5022711518045411383}
   Content: {fileID: 5022711517590946117}
   IsOpenSound: 0
-  levelsConfig: {fileID: 11400000, guid: da0d29ac410124b6eaddeacaa02e047c, type: 2}
   levelImage: {fileID: 5022711517755814145}
   startButton: {fileID: 5022711518517911397}
   levelText: {fileID: 5022711518512476181}
@@ -595,7 +594,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c3b21cb4a1d7c487f9fc3d36eab1752e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
