@@ -1,3 +1,4 @@
+using System.Globalization;
 using UnityEngine;
 using Saves;
 using TMPro;
@@ -15,7 +16,19 @@ namespace Views
 
         public void UpdateCoinText()
         {
-            coinText.text = GameSaves.Instance.GetCoin().ToString();
+            int coin = GameSaves.Instance.GetCoin();
+            coinText.text = FormatNumberWithSpaces(coin);
+        }
+
+        private string FormatNumberWithSpaces(int number)
+        {
+            // Используем культуру инвариантной культуры для стандартного формата
+            string formattedNumber = number.ToString("N0", CultureInfo.InvariantCulture);
+        
+            // Заменяем запятые на пробелы
+            formattedNumber = formattedNumber.Replace(',', ' ');
+        
+            return formattedNumber;
         }
     }
 }

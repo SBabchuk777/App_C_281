@@ -44,6 +44,11 @@ namespace Saves
             }
         }
 
+        public void DeleteKeyTutorial()
+        {
+            DeleteKey(ShowTutorialKey);
+        }
+
         public void SaveLevelIndex()
         {
             LevelIndex = ReadData<int>(LevelKey);

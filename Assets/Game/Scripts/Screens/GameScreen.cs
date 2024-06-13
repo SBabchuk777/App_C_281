@@ -141,7 +141,7 @@ namespace Screens
                 return null;
 
             GridView nearestCell = null;
-            float minDistance = Mathf.Infinity;
+            float minDistance = 10;//Mathf.Infinity;
 
             foreach (GridView cell in _gridViews)
             {

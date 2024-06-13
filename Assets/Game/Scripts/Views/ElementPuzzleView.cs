@@ -26,6 +26,7 @@ namespace Views
         private int _elementIndex;
 
         private bool isDrag = true;
+        private bool isBusy = false;
 
         public void SetupElement(Sprite sprite, int index,Vector2 vector2)
         {
@@ -81,7 +82,10 @@ namespace Views
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (isDrag)
+            if(CheckPauseScreen())
+                return;
+            
+            if (isDrag && !isBusy)
             {
                 var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
 
@@ -101,7 +105,13 @@ namespace Views
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (isDrag)
+            if (CheckPauseScreen())
+            {
+                transform.position = _startPos;
+                return;
+            }
+            
+            if (isDrag && !isBusy)
             {
                 Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -1 * (Camera.main.transform.position.z));
                 Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition) - _mousePositionOffest;
@@ -111,7 +121,13 @@ namespace Views
         }
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (isDrag)
+            if (CheckPauseScreen())
+            {
+                transform.position = _startPos;
+                return;
+            }
+            
+            if (isDrag && !isBusy)
             {
                 var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
                 
@@ -137,6 +153,7 @@ namespace Views
                         AudioManager.Instance.PutCardSound();
                         transform.position = nearestCell.transform.position;
                         isDrag = false;
+                        isBusy = true;
                         
                         nearestCell.SetBusy();
                         
@@ -165,6 +182,16 @@ namespace Views
                    
                 }
             }
+        }
+
+        private bool CheckPauseScreen()
+        {
+            var pauseScreen = UIManager.Instance.GetScreen<PauseScreen>();
+
+            if (pauseScreen != null && pauseScreen.Content.gameObject.activeSelf)
+                return true;
+
+            return false;
         }
 
         private GridView FindNearestCellPosition(Vector3 position)

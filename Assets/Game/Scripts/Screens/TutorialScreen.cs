@@ -17,6 +17,8 @@ namespace Screens
     {
         public static event Action<bool> CloseTutorial;
 
+        [SerializeField] private Button closeTutorial;
+        
         [SerializeField] private GridLayoutGroup grid3x3;
         [SerializeField] private RectTransform elementParents;
         [SerializeField] private RectTransform firstPuzzleParent;
@@ -29,6 +31,11 @@ namespace Screens
 
         private List<ElementPuzzleView> _elementPuzzleViews = new List<ElementPuzzleView>();
         private List<GridView> _gridViews = new List<GridView>();
+
+        private bool isEndShowTutorial;
+
+        private ElementPuzzleView _firstCard;
+        private Vector3 _cardPosition;
 
         public async void ShowTutorial()
         {
@@ -54,7 +61,10 @@ namespace Screens
                 handTutorial.transform.DOMove(cardTarget.transform.position + offestHands, animationTime);
                 firstCard.transform.DOMove(cardTarget.transform.position, animationTime).OnComplete(() =>
                 {
-                    CallbackTutorial(firstCard, cardPosition);
+                    _firstCard = firstCard;
+                    _cardPosition = cardPosition;
+                    isEndShowTutorial = true;
+                    //CallbackTutorial(firstCard, cardPosition);
                 });
             });
         }
@@ -63,14 +73,24 @@ namespace Screens
         {
             await Task.Delay(300);
 
-            elementPuzzleView.transform.position = position;
+            //elementPuzzleView.transform.position = position;
 
             handTutorial.DOFade(0, fadeTime).OnComplete(() =>
             {
-                CloseTutorial?.Invoke(true);
-                ActiveTutorialObjects(false);
-                CloseScreen();
+                isEndShowTutorial = true;
+                 CloseTutorial?.Invoke(true);
+                 ActiveTutorialObjects(false);
+                 CloseScreen();
             });
+        }
+
+        public void OnCloseTutorial()
+        {
+            if (isEndShowTutorial)
+            {
+                GameSaves.Instance.ShowTutorial();
+                CallbackTutorial(_firstCard, _cardPosition);
+            }
         }
 
         public void ActiveTutorialObjects(bool active)
@@ -127,6 +147,7 @@ namespace Screens
 
         public override void OpenScreen()
         {
+            GameSaves.Instance.DeleteKeyTutorial();   
             base.OpenScreen();
         }
 
