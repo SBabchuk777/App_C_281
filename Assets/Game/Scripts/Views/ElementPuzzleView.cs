@@ -119,6 +119,7 @@ namespace Views
                 transform.position = objPosition;
             }
         }
+        
         public void OnEndDrag(PointerEventData eventData)
         {
             if (CheckPauseScreen())
@@ -189,7 +190,14 @@ namespace Views
             var pauseScreen = UIManager.Instance.GetScreen<PauseScreen>();
 
             if (pauseScreen != null && pauseScreen.Content.gameObject.activeSelf)
+            {
+                var gameScreen = UIManager.Instance.GetScreen<GameScreen>();
+                
+                if(gameScreen !=null)
+                    gameScreen.SetId(-1);
+                
                 return true;
+            }
 
             return false;
         }

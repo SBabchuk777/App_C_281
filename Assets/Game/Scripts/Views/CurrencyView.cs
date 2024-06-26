@@ -22,10 +22,8 @@ namespace Views
 
         private string FormatNumberWithSpaces(int number)
         {
-            // Используем культуру инвариантной культуры для стандартного формата
             string formattedNumber = number.ToString("N0", CultureInfo.InvariantCulture);
         
-            // Заменяем запятые на пробелы
             formattedNumber = formattedNumber.Replace(',', ' ');
         
             return formattedNumber;
