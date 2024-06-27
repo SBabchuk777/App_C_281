@@ -157,6 +157,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.appc281.name
     Standalone: com.DefaultCompany.2DProject
+    iPhone: com.appc281.name
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -805,7 +806,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 2
+  selectedPlatform: 3
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1

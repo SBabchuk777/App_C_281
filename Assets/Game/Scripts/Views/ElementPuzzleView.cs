@@ -139,7 +139,16 @@ namespace Views
 
                 GridView nearestCell = FindNearestCellPosition(currentPosition);
 
-                float distance = Vector2.Distance(transform.position, nearestCell.transform.position);
+                float distance = 0;
+                
+                if(nearestCell != null)
+                     distance = Vector2.Distance(transform.position, nearestCell.transform.position);
+                else
+                {
+                    isDrag = true;
+                    transform.position = _startPos;
+                    //return;
+                }
 
                 if (distance > maxDistance)
                 {
@@ -149,29 +158,38 @@ namespace Views
                 }
                 else
                 {
-                    if(_elementIndex == nearestCell.ElementPuzzleIndex)
+                    if (nearestCell != null)
                     {
-                        AudioManager.Instance.PutCardSound();
-                        transform.position = nearestCell.transform.position;
-                        isDrag = false;
-                        isBusy = true;
-                        
-                        nearestCell.SetBusy();
-                        
-                        if (gameScreen != null)
+                        if (_elementIndex == nearestCell.ElementPuzzleIndex)
                         {
-                            gameScreen.AddElementForGrid(this);
-                        }
-                    }
-                    else if(!nearestCell.IsBusy) 
-                    {
-                        isDrag = true;
-                        transform.position = _startPos;
-                        AudioManager.Instance.ErrorPutCardSound();
+                            AudioManager.Instance.PutCardSound();
+                            transform.position = nearestCell.transform.position;
+                            isDrag = false;
+                            isBusy = true;
 
-                        if (gameScreen != null)
+                            nearestCell.SetBusy();
+
+                            if (gameScreen != null)
+                            {
+                                gameScreen.AddElementForGrid(this);
+                            }
+                        }
+                        else if (!nearestCell.IsBusy)
                         {
-                            gameScreen.SpendAttemp();
+                            isDrag = true;
+                            transform.position = _startPos;
+                            AudioManager.Instance.ErrorPutCardSound();
+
+                            if (gameScreen != null)
+                            {
+                                gameScreen.SpendAttemp();
+                            }
+                        }
+                        else
+                        {
+                            AudioManager.Instance.ErrorPutCardSound();
+                            isDrag = true;
+                            transform.position = _startPos;
                         }
                     }
                     else
